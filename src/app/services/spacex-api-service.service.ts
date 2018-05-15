@@ -5,7 +5,7 @@ import {Company} from "../models/company";
 import {catchError, map, tap} from "rxjs/internal/operators";
 import {LaunchFilter} from "../models/launchFilter";
 import { Launch } from '../models/launch';
-import {Capsule} from "../models/capsule";
+import {Capsule, CapsuleDetails} from "../models/capsule";
 
 @Injectable({
   providedIn: 'root'
@@ -76,6 +76,14 @@ export class SpacexApiService {
   getCapsule(name: string): Observable<Capsule> {
     const requestEndpoint = `${this.baseUrl}/capsules/${name}`;
     return this.http.get<Capsule>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  getCapsulesDetails(): Observable<CapsuleDetails[]> {
+    const requestEndpoint = `${this.baseUrl}/parts/caps`;
+    return this.http.get<CapsuleDetails[]>(requestEndpoint)
       .pipe(
         catchError(this.handleError)
       );
