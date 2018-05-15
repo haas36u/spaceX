@@ -14,11 +14,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.spacexService.getCompanyInfo()
-      .subscribe(data => {
-        console.log(data);
-      });
-
     this.spacexService.getLastLaunch()
       .subscribe(data => {
         console.log(data);

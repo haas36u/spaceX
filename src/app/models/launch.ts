@@ -1,3 +1,4 @@
+import {Rocket} from "./rocket";
 
 
 export interface Core {
@@ -8,32 +9,6 @@ export interface Core {
     land_success: boolean;
     landing_type: string;
     landing_vehicle: string;
-}
-
-export interface FirstStage {
-    cores: Core[];
-}
-
-export interface Payload {
-    payload_id: string;
-    reused: boolean;
-    customers: string[];
-    payload_type: string;
-    payload_mass_kg: number;
-    payload_mass_lbs: number;
-    orbit: string;
-}
-
-export interface SecondStage {
-    payloads: Payload[];
-}
-
-export interface Rocket {
-    rocket_id: string;
-    rocket_name: string;
-    rocket_type: string;
-    first_stage: FirstStage;
-    second_stage: SecondStage;
 }
 
 export interface Telemetry {

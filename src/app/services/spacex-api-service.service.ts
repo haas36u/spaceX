@@ -5,6 +5,7 @@ import {Company} from "../models/company";
 import {catchError, map, tap} from "rxjs/internal/operators";
 import {LaunchFilter} from "../models/launchFilter";
 import { Launch } from '../models/launch';
+import {Rocket} from "../models/rocket";
 
 @Injectable({
   providedIn: 'root'
@@ -59,6 +60,14 @@ export class SpacexApiService {
 
     const requestEndpoint = `${this.baseUrl}/launches/all`;
     return this.http.get<Launch>(requestEndpoint, {params})
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  getRockets(): Observable<Rocket[]> {
+    const requestEndpoint = `${this.baseUrl}/rockets`;
+    return this.http.get<Rocket[]>(requestEndpoint)
       .pipe(
         catchError(this.handleError)
       );
