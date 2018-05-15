@@ -73,6 +73,14 @@ export class SpacexApiService {
       );
   }
 
+  getRocket(name: string): Observable<Rocket> {
+    const requestEndpoint = `${this.baseUrl}/rockets/${name}`;
+    return this.http.get<Rocket>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.

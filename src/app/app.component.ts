@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.spacexService.getLastLaunch()
+    this.spacexService.getRocket('falcon1')
       .subscribe(data => {
         console.log(data);
       })
