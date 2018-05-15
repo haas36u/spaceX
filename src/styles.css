@@ -39,17 +39,23 @@ a {
     background-color: #ffffff;
     padding: 0.5rem;
 }
+.mat-sidenav {
+    padding: 1rem;
+    background-color: #454552;
+    color: #ffffff;
+}
+.mat-sidenav ul {
+    margin-top: 2rem;
+}
 .mat-sidenav li {
     margin: 1rem 0;
 }
 
 .mat-sidenav a {
+    color: #ffffff;
     font-size: 1rem;
 }
 
-.mat-sidenav {
-    padding: 1rem;
-}
 
 .example-spacer {
     flex: 1 1 auto;
