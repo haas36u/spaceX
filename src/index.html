@@ -7,8 +7,29 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
-  <app-root></app-root>
-</body>
+	<body>
+		<mat-sidenav-container class="container">
+			<mat-sidenav #sidenav [mode]="push">
+				<span>Space Infos</span>
+				<span class="example-spacer"></span>
+				<div>
+					<ul>
+						<li><a routerLink="/rockets">Rockets</a></li>
+						<li><a routerLink="/capsules">Capsules</a></li>
+						<li><a routerLink="/launchpad">Launchpad</a></li>
+						<li><a routerLink="/launches">Launches</a></li>
+						<li><a routerLink="/about">About</a></li>
+					</ul>
+				</div>
+			</mat-sidenav>
+			
+			<mat-sidenav-content>
+				<mat-icon (click)="sidenav.toggle()" class="menu-icon">menu</mat-icon>
+				
+				<app-root></app-root>
+			</mat-sidenav-content>
+		</mat-sidenav-container>
+	</body>
 </html>

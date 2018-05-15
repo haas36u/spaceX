@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
+
 html, html * {
   font-family: Roboto;
 }
@@ -22,25 +22,35 @@ a {
     text-decoration: none;
 }
 
+.container {
+    background-color: transparent !important;
+    position: absolute !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 
 /** HEADER **/
-.header {
-    background-color: #000000;
-    color: #ffffff;
+.menu-icon {
+    cursor: pointer;
+    position: fixed;
+    background-color: #ffffff;
+    padding: 0.5rem;
 }
-.header ul li {
-    display: inline-block;
-    vertical-align: top;
+.mat-sidenav li {
+    margin: 1rem 0;
 }
 
-.header a {
+.mat-sidenav a {
     font-size: 1rem;
-    padding: 0 0.5rem;
-    color: #ffffff;
 }
 
-
+.mat-sidenav {
+    padding: 1rem;
+}
 
 .example-spacer {
     flex: 1 1 auto;
-  }
+}
