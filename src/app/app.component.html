@@ -1,21 +1,20 @@
-<mat-toolbar class="header">
-	<mat-toolbar-row>
-		<span>Space Infos</span>
-		<span class="example-spacer"></span>
-		<div>
-			<ul>
-				<li><a routerLink="/rockets">Rockets</a></li>
-				<li><a routerLink="/capsules">Capsules</a></li>
-				<li><a routerLink="/launchpad">Launchpad</a></li>
-				<li><a routerLink="/launches">Launches</a></li>
-				<li><a routerLink="/about">A propos</a></li>
-			</ul>
-		</div>
-	</mat-toolbar-row>
-</mat-toolbar>
+<mat-sidenav-container class="container">
+	<mat-sidenav #sidenav [mode]="push">
+		<img src="assets/logo.png" alt="Logo SpaceX">
+		<ul>
+			<li><a routerLink="/rockets">Rockets</a></li>
+			<li><a routerLink="/capsules">Capsules</a></li>
+			<li><a routerLink="/launchpad">Launchpad</a></li>
+			<li><a routerLink="/launches">Launches</a></li>
+			<li><a routerLink="/about">About us</a></li>
+		</ul>
+	</mat-sidenav>
+	
+	<mat-sidenav-content>
+		<mat-icon (click)="sidenav.toggle()" class="menu-icon">menu</mat-icon>
+		
+		<router-outlet></router-outlet>
+		<img src="../assets/homepage_background.jpg" alt="" width="100%">
 
-<img src="../assets/homepage_background.jpg" alt="" width="100%">
-
-
-{{launch | json}}
-
+	</mat-sidenav-content>
+</mat-sidenav-container>
