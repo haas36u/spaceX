@@ -3,6 +3,7 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {Observable, of, throwError} from "rxjs/index";
 import {Company} from "../models/company";
 import {catchError, map, tap} from "rxjs/internal/operators";
+import { Launch } from '../models/launch';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,39 @@ export class SpacexApiService {
   getCompanyInfo(): Observable<Company> {
     const requestEndpoint = `${this.baseUrl}/info`;
     return this.http.get<Company>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  /*** LAUNCHES ***/
+  getLastLaunche(): Observable<Launch> {
+    const requestEndpoint = `${this.baseUrl}/launches/latest`;
+    return this.http.get<Launch>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  getPastLaunches(): Observable<Launch> {
+    const requestEndpoint = `${this.baseUrl}/launches`;
+    return this.http.get<Launch>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  getUpcomingLaunches(): Observable<Launch> {
+    const requestEndpoint = `${this.baseUrl}/launches/upcoming`;
+    return this.http.get<Launch>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  getAllLaunches(): Observable<Launch> {
+    const requestEndpoint = `${this.baseUrl}/launches/all`;
+    return this.http.get<Launch>(requestEndpoint)
       .pipe(
         catchError(this.handleError)
       );
