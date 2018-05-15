@@ -10,6 +10,7 @@ import { CapsuleListComponent } from '../../components/capsule/capsule-list/caps
 import { CapsuleDetailsComponent } from '../../components/capsule/capsule-details/capsule-details.component';
 import { LaunchpadListComponent } from '../../components/launchpad/launchpad-list/launchpad-list.component';
 import { LaunchpadDetailsComponent } from '../../components/launchpad/launchpad-details/launchpad-details.component';
+import { LaunchListComponent } from '../../components/launch/launch-list/launch-list.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +20,7 @@ const appRoutes: Routes = [
   { path: 'capsules/:id', component: CapsuleDetailsComponent },
   { path: 'launchpads', component: LaunchpadListComponent },
   { path: 'launchpad/:id', component: LaunchpadDetailsComponent },
+  { path: 'launches', component: LaunchListComponent },
   { path: 'about', component: CompanyComponent }
 ]
 

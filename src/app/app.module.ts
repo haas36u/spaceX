@@ -18,6 +18,8 @@ import { CapsuleThumbComponent } from './components/capsule/capsule-thumb/capsul
 import { LaunchpadDetailsComponent } from './components/launchpad/launchpad-details/launchpad-details.component';
 import { LaunchpadListComponent } from './components/launchpad/launchpad-list/launchpad-list.component';
 import { LaunchpadThumbComponent } from './components/launchpad/launchpad-thumb/launchpad-thumb.component';
+import { LaunchListComponent } from './components/launch/launch-list/launch-list.component';
+import { LaunchThumbComponent } from './components/launch/launch-thumb/launch-thumb.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { LaunchpadThumbComponent } from './components/launchpad/launchpad-thumb/
     CapsuleThumbComponent,
     LaunchpadDetailsComponent,
     LaunchpadListComponent,
-    LaunchpadThumbComponent
+    LaunchpadThumbComponent,
+    LaunchListComponent,
+    LaunchThumbComponent
   ],
   imports: [
     BrowserModule,
