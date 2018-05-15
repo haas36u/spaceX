@@ -12,6 +12,9 @@ import { HomeComponent } from './components/home/home.component';
 import { RocketDetailsComponent } from './components/rocket/rocket-details/rocket-details.component';
 import { RocketListComponent } from './components/rocket/rocket-list/rocket-list.component';
 import { RocketThumbComponent } from './components/rocket/rocket-thumb/rocket-thumb.component';
+import { CapsuleDetailsComponent } from './components/capsule/capsule-details/capsule-details.component';
+import { CapsuleListComponent } from './components/capsule/capsule-list/capsule-list.component';
+import { CapsuleThumbComponent } from './components/capsule/capsule-thumb/capsule-thumb.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { RocketThumbComponent } from './components/rocket/rocket-thumb/rocket-th
     HomeComponent,
     RocketDetailsComponent,
     RocketListComponent,
-    RocketThumbComponent
+    RocketThumbComponent,
+    CapsuleDetailsComponent,
+    CapsuleListComponent,
+    CapsuleThumbComponent
   ],
   imports: [
     BrowserModule,
