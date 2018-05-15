@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SpacexApiService} from "./services/spacex-api-service.service";
+import {LaunchFilter, Order} from "./models/launchFilter";
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.spacexService.getCompanyInfo()
+      .subscribe(data => {
+        console.log(data);
+      });
+
+    this.spacexService.getLastLaunch()
       .subscribe(data => {
         console.log(data);
       })
