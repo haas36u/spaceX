@@ -5,8 +5,7 @@ import {Company} from "../models/company";
 import {catchError, map, tap} from "rxjs/internal/operators";
 import {LaunchFilter} from "../models/launchFilter";
 import { Launch } from '../models/launch';
-import {Capsule, CapsuleDetails} from "../models/capsule";
-import {CapsuleFilter} from "../models/capsuleFilter";
+import {Capsule, CapsuleDetails, CapsuleFilter} from "../models/capsule";
 import {Rocket} from "../models/rocket";
 
 @Injectable({
