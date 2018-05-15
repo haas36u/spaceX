@@ -8,6 +8,7 @@ import { Launch } from '../models/launch';
 import {Capsule, CapsuleDetails, CapsuleFilter} from "../models/capsule";
 import {Rocket} from "../models/rocket";
 import {Core, CoreFilter} from "../models/core";
+import {Launchpad} from "../models/launchpad";
 
 @Injectable({
 	providedIn: 'root'
@@ -117,8 +118,24 @@ export class SpacexApiService {
       );
   }
 
+  getLaunchpads(): Observable<Launchpad[]> {
+    const requestEndpoint = `${this.baseUrl}/launchpads`;
+    return this.http.get<Launchpad[]>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  getLaunchpad(id: string): Observable<Launchpad> {
+    const requestEndpoint = `${this.baseUrl}/launchpads/${id}`;
+    return this.http.get<Launchpad>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
   getCores(filter?: CoreFilter): Observable<Core[]> {
-	  const params = this.filtersToHttpParams(filter);
+    const params = this.filtersToHttpParams(filter);
 
     const requestEndpoint = `${this.baseUrl}/parts/cores`;
     return this.http.get<Core[]>(requestEndpoint, {params})
@@ -134,7 +151,6 @@ export class SpacexApiService {
       .pipe(
         catchError(this.handleError)
       );
-
   }
 
   private handleError(error: HttpErrorResponse) {
