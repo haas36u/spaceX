@@ -20,11 +20,6 @@ export class AppComponent implements OnInit {
         console.log(data);
       })
 
-		this.spacexService.getLaunchpads()
-		.subscribe(data => {
-			console.log(data);
-		})
-
 		this.getLastLaunch();
 	}
 
