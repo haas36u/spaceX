@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpParams} from '@angular/common/http';
 import {Observable, of, throwError} from "rxjs/index";
 import {Company} from "../models/company";
 import {catchError, map, tap} from "rxjs/internal/operators";
+import {LaunchFilter} from "../models/launchFilter";
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,13 @@ export class SpacexApiService {
       .pipe(
         catchError(this.handleError)
       );
+  }
+
+  getFilteredLauches(filter: LaunchFilter) {
+    const params = filter.toHttpParams();
+    const requestEndpoint = `${this.baseUrl}/launches`;
+
+    return this.http.get(requestEndpoint, {params});
   }
 
   private handleError(error: HttpErrorResponse) {

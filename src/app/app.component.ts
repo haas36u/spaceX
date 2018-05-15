@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SpacexApiService} from "./services/spacex-api-service.service";
+import {LaunchFilter} from "./models/launchFilter";
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,8 @@ export class AppComponent implements OnInit {
     this.spacexService.getCompanyInfo()
       .subscribe(data => {
         console.log(data);
-      })
+      });
+
+    const filter = new LaunchFilter({id: true});
   }
 }
