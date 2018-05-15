@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SpacexApiService} from "./services/spacex-api-service.service";
-import {LaunchFilter} from "./models/launchFilter";
+import {LaunchFilter, Order} from "./models/launchFilter";
 
 @Component({
   selector: 'app-root',
@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
         console.log(data);
       });
 
-    this.spacexService.getFilteredLauches({id: true})
+    this.spacexService.getLastLaunch()
       .subscribe(data => {
         console.log(data);
       })

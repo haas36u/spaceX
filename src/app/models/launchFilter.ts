@@ -1,40 +1,43 @@
+/**
+ * Interface for Launches filters
+ */
 export interface LaunchFilter {
   /**
    * Use true to show mongo document id's
    */
-  id?;
+  id?: boolean;
   /**
    * Filter launches by mongo document id
    */
-  flight_id?;
+  flight_id?: string;
   /**
    * Change result ordering by asc or desc
    */
-  order?;
+  order?: Order;
   /**
    * Filter by a date range
    */
-  start?;
+  start?: Date;
   /**
    * Filter by a date range
    */
-  final?;
+  final?: Date;
   /**
    * Filter by flight number
    */
-  flight_number?;
+  flight_number?: number;
   /**
    * Filter by year
    */
-  launch_year?;
+  launch_year?: string;
   /**
    * Filter by UTC timestamp
    */
-  launch_date_utc?;
+  launch_date_utc?: Date;
   /**
    * Filter by local ISO timestamp
    */
-  launch_date_local?;
+  launch_date_local?: Date;
   /**
    * Filter by rocket id
    */
@@ -131,4 +134,9 @@ export interface LaunchFilter {
    * Filter by landing vehicle
    */
   landing_vehicle?;
+}
+
+export enum Order {
+  asc,
+  desc
 }

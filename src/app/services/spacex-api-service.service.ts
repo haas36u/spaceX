@@ -24,45 +24,41 @@ export class SpacexApiService {
       );
   }
 
-  getFilteredLauches(filter: LaunchFilter) {
-    let params = new HttpParams();
-    for (let key in filter) {
-      params.set(key, filter[key]);
-    }
-    
-    const requestEndpoint = `${this.baseUrl}/launches`;
+  getLastLaunch(filter?: LaunchFilter): Observable<Launch> {
+    const params = this.filtersToHttpParams(filter);
 
-    return this.http.get(requestEndpoint, {params});
-
-  }
-
-  getLastLaunch(): Observable<Launch> {
     const requestEndpoint = `${this.baseUrl}/launches/latest`;
-    return this.http.get<Launch>(requestEndpoint)
+    return this.http.get<Launch>(requestEndpoint, {params})
       .pipe(
         catchError(this.handleError)
       );
   }
 
-  getPastLaunches(): Observable<Launch> {
+  getPastLaunches(filter?: LaunchFilter): Observable<Launch> {
+    const params = this.filtersToHttpParams(filter);
+
     const requestEndpoint = `${this.baseUrl}/launches`;
-    return this.http.get<Launch>(requestEndpoint)
+    return this.http.get<Launch>(requestEndpoint, {params})
       .pipe(
         catchError(this.handleError)
       );
   }
 
-  getUpcomingLaunches(): Observable<Launch> {
+  getUpcomingLaunches(filter?: LaunchFilter): Observable<Launch> {
+    const params = this.filtersToHttpParams(filter);
+
     const requestEndpoint = `${this.baseUrl}/launches/upcoming`;
-    return this.http.get<Launch>(requestEndpoint)
+    return this.http.get<Launch>(requestEndpoint, {params})
       .pipe(
         catchError(this.handleError)
       );
   }
 
-  getAllLaunches(): Observable<Launch> {
+  getAllLaunches(filter?: LaunchFilter): Observable<Launch> {
+    const params = this.filtersToHttpParams(filter);
+
     const requestEndpoint = `${this.baseUrl}/launches/all`;
-    return this.http.get<Launch>(requestEndpoint)
+    return this.http.get<Launch>(requestEndpoint, {params})
       .pipe(
         catchError(this.handleError)
       );
@@ -83,4 +79,13 @@ export class SpacexApiService {
     return throwError(
       'Something bad happened; please try again later.');
   };
+
+  private filtersToHttpParams(filter: LaunchFilter): HttpParams {
+    let params = new HttpParams();
+    for (let key in filter) {
+      params = params.append(key, filter[key]);
+    }
+
+    return params;
+  }
 }
