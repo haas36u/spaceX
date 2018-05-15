@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
 	}
 
   ngOnInit(): void {
-	  this.spacexService.getCores()
+	  this.spacexService.getCore('B1041')
       .subscribe(data => console.log(data));
 	}
 }
