@@ -7,60 +7,77 @@ import {LaunchFilter} from "../models/launchFilter";
 import { Launch } from '../models/launch';
 import {Capsule, CapsuleDetails} from "../models/capsule";
 import {CapsuleFilter} from "../models/capsuleFilter";
+import {Rocket} from "../models/rocket";
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class SpacexApiService {
 
-  private baseUrl = 'https://api.spacexdata.com/v2';
+	private baseUrl = 'https://api.spacexdata.com/v2';
 
-  constructor(private http: HttpClient) {
-  }
+	constructor(private http: HttpClient) {
+	}
 
-  getCompanyInfo(): Observable<Company> {
-    const requestEndpoint = `${this.baseUrl}/info`;
-    return this.http.get<Company>(requestEndpoint)
+	getCompanyInfo(): Observable<Company> {
+		const requestEndpoint = `${this.baseUrl}/info`;
+		return this.http.get<Company>(requestEndpoint)
+		.pipe(
+			catchError(this.handleError)
+		);
+	}
+
+	getLastLaunch(filter?: LaunchFilter): Observable<Launch> {
+		const params = this.filtersToHttpParams(filter);
+
+		const requestEndpoint = `${this.baseUrl}/launches/latest`;
+		return this.http.get<Launch>(requestEndpoint, {params})
+		.pipe(
+			catchError(this.handleError)
+		);
+	}
+
+	getPastLaunches(filter?: LaunchFilter): Observable<Launch> {
+		const params = this.filtersToHttpParams(filter);
+
+		const requestEndpoint = `${this.baseUrl}/launches`;
+		return this.http.get<Launch>(requestEndpoint, {params})
+		.pipe(
+			catchError(this.handleError)
+		);
+	}
+
+	getUpcomingLaunches(filter?: LaunchFilter): Observable<Launch> {
+		const params = this.filtersToHttpParams(filter);
+
+		const requestEndpoint = `${this.baseUrl}/launches/upcoming`;
+		return this.http.get<Launch>(requestEndpoint, {params})
+		.pipe(
+			catchError(this.handleError)
+		);
+	}
+
+	getAllLaunches(filter?: LaunchFilter): Observable<Launch> {
+		const params = this.filtersToHttpParams(filter);
+
+		const requestEndpoint = `${this.baseUrl}/launches/all`;
+		return this.http.get<Launch>(requestEndpoint, {params})
+		.pipe(
+			catchError(this.handleError)
+		);
+	}
+
+  getRockets(): Observable<Rocket[]> {
+    const requestEndpoint = `${this.baseUrl}/rockets`;
+    return this.http.get<Rocket[]>(requestEndpoint)
       .pipe(
         catchError(this.handleError)
       );
   }
 
-  getLastLaunch(filter?: LaunchFilter): Observable<Launch> {
-    const params = this.filtersToHttpParams(filter);
-
-    const requestEndpoint = `${this.baseUrl}/launches/latest`;
-    return this.http.get<Launch>(requestEndpoint, {params})
-      .pipe(
-        catchError(this.handleError)
-      );
-  }
-
-  getPastLaunches(filter?: LaunchFilter): Observable<Launch> {
-    const params = this.filtersToHttpParams(filter);
-
-    const requestEndpoint = `${this.baseUrl}/launches`;
-    return this.http.get<Launch>(requestEndpoint, {params})
-      .pipe(
-        catchError(this.handleError)
-      );
-  }
-
-  getUpcomingLaunches(filter?: LaunchFilter): Observable<Launch> {
-    const params = this.filtersToHttpParams(filter);
-
-    const requestEndpoint = `${this.baseUrl}/launches/upcoming`;
-    return this.http.get<Launch>(requestEndpoint, {params})
-      .pipe(
-        catchError(this.handleError)
-      );
-  }
-
-  getAllLaunches(filter?: LaunchFilter): Observable<Launch> {
-    const params = this.filtersToHttpParams(filter);
-
-    const requestEndpoint = `${this.baseUrl}/launches/all`;
-    return this.http.get<Launch>(requestEndpoint, {params})
+  getRocket(name: string): Observable<Rocket> {
+    const requestEndpoint = `${this.baseUrl}/rockets/${name}`;
+    return this.http.get<Rocket>(requestEndpoint)
       .pipe(
         catchError(this.handleError)
       );
@@ -123,6 +140,6 @@ export class SpacexApiService {
       params = params.append(key, filter[key]);
     }
 
-    return params;
-  }
+		return params;
+	}
 }
