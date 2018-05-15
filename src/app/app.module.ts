@@ -7,10 +7,14 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './modules/app-routing/app-routing.module';
 import { SharedModule } from './modules/shared/shared.module';
+import { CompanyComponent } from './components/company/company.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CompanyComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
