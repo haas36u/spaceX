@@ -4,16 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from '../../app.component';
 import { HomeComponent } from '../../components/home/home.component';
 import { CompanyComponent } from '../../components/company/company.component';
+import { RocketListComponent } from '../../components/rocket/rocket-list/rocket-list.component';
+import { RocketDetailsComponent } from '../../components/rocket/rocket-details/rocket-details.component';
 
 const appRoutes: Routes = [
-  {
-    path: '',
-    component: HomeComponent
-  },
-  {
-    path: 'about',
-    component: CompanyComponent
-  }
+  { path: '', component: HomeComponent },
+  { path: 'rocket', component: RocketListComponent },
+  { path: 'rocket/:id', component: RocketDetailsComponent },
+  { path: 'about', component: CompanyComponent }
 ]
 
 @NgModule({

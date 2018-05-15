@@ -9,12 +9,18 @@ import { AppRoutingModule } from './modules/app-routing/app-routing.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { CompanyComponent } from './components/company/company.component';
 import { HomeComponent } from './components/home/home.component';
+import { RocketDetailsComponent } from './components/rocket/rocket-details/rocket-details.component';
+import { RocketListComponent } from './components/rocket/rocket-list/rocket-list.component';
+import { RocketThumbComponent } from './components/rocket/rocket-thumb/rocket-thumb.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CompanyComponent,
-    HomeComponent
+    HomeComponent,
+    RocketDetailsComponent,
+    RocketListComponent,
+    RocketThumbComponent
   ],
   imports: [
     BrowserModule,
