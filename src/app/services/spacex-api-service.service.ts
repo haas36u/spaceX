@@ -73,6 +73,15 @@ export class SpacexApiService {
       );
   }
 
+  getCapsule(name: string): Observable<Capsule> {
+    const requestEndpoint = `${this.baseUrl}/capsules/${name}`;
+    return this.http.get<Capsule>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
