@@ -19,6 +19,9 @@ export class AppComponent implements OnInit {
         console.log(data);
       });
 
-    const filter = new LaunchFilter({id: true});
+    this.spacexService.getFilteredLauches({id: true})
+      .subscribe(data => {
+        console.log(data);
+      })
   }
 }
