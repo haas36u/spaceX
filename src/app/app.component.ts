@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
         console.log(data);
       });
 
-    this.spacexService.getCapsulesDetails()
+    this.spacexService.getCapsuleDetails('C113')
       .subscribe(data => {
         console.log(data);
       })

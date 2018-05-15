@@ -89,6 +89,14 @@ export class SpacexApiService {
       );
   }
 
+  getCapsuleDetails(serial: string): Observable<CapsuleDetails> {
+    const requestEndpoint = `${this.baseUrl}/parts/caps/${serial}`;
+    return this.http.get<CapsuleDetails>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
