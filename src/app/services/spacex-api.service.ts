@@ -7,6 +7,7 @@ import {LaunchFilter} from "../models/launchFilter";
 import { Launch } from '../models/launch';
 import {Capsule, CapsuleDetails, CapsuleFilter} from "../models/capsule";
 import {Rocket} from "../models/rocket";
+import {Core} from "../models/core";
 
 @Injectable({
 	providedIn: 'root'
@@ -116,6 +117,14 @@ export class SpacexApiService {
       );
   }
 
+  getCores(): Observable<Core[]> {
+    const requestEndpoint = `${this.baseUrl}/parts/cores`;
+    return this.http.get<Core[]>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+
+  }
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {

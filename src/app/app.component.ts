@@ -12,5 +12,7 @@ export class AppComponent implements OnInit {
 	}
 
   ngOnInit(): void {
+	  this.spacexService.getCores()
+      .subscribe(data => console.log(data));
 	}
 }
