@@ -14,7 +14,12 @@ export class AppComponent implements OnInit {
 	constructor(private spacexService: SpacexApiService) {
 	}
 
-	ngOnInit(): void {
+  ngOnInit(): void {
+    this.spacexService.getRocket('falcon1')
+      .subscribe(data => {
+        console.log(data);
+      })
+
 		this.spacexService.getCompanyInfo()
 		.subscribe(data => {
 			console.log(data);
