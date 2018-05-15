@@ -6,6 +6,7 @@ import {catchError, map, tap} from "rxjs/internal/operators";
 import {LaunchFilter} from "../models/launchFilter";
 import { Launch } from '../models/launch';
 import {Capsule, CapsuleDetails} from "../models/capsule";
+import {CapsuleFilter} from "../models/capsuleFilter";
 
 @Injectable({
   providedIn: 'root'
@@ -81,9 +82,11 @@ export class SpacexApiService {
       );
   }
 
-  getCapsulesDetails(): Observable<CapsuleDetails[]> {
+  getCapsulesDetails(filter?: CapsuleFilter): Observable<CapsuleDetails[]> {
+    const params = this.filtersToHttpParams(filter);
+
     const requestEndpoint = `${this.baseUrl}/parts/caps`;
-    return this.http.get<CapsuleDetails[]>(requestEndpoint)
+    return this.http.get<CapsuleDetails[]>(requestEndpoint, {params})
       .pipe(
         catchError(this.handleError)
       );
@@ -114,7 +117,7 @@ export class SpacexApiService {
       'Something bad happened; please try again later.');
   };
 
-  private filtersToHttpParams(filter: LaunchFilter): HttpParams {
+  private filtersToHttpParams(filter: Object): HttpParams {
     let params = new HttpParams();
     for (let key in filter) {
       params = params.append(key, filter[key]);
