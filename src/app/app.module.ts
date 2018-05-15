@@ -15,6 +15,9 @@ import { RocketThumbComponent } from './components/rocket/rocket-thumb/rocket-th
 import { CapsuleDetailsComponent } from './components/capsule/capsule-details/capsule-details.component';
 import { CapsuleListComponent } from './components/capsule/capsule-list/capsule-list.component';
 import { CapsuleThumbComponent } from './components/capsule/capsule-thumb/capsule-thumb.component';
+import { LaunchpadDetailsComponent } from './components/launchpad/launchpad-details/launchpad-details.component';
+import { LaunchpadListComponent } from './components/launchpad/launchpad-list/launchpad-list.component';
+import { LaunchpadThumbComponent } from './components/launchpad/launchpad-thumb/launchpad-thumb.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { CapsuleThumbComponent } from './components/capsule/capsule-thumb/capsul
     RocketThumbComponent,
     CapsuleDetailsComponent,
     CapsuleListComponent,
-    CapsuleThumbComponent
+    CapsuleThumbComponent,
+    LaunchpadDetailsComponent,
+    LaunchpadListComponent,
+    LaunchpadThumbComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,8 @@ import { RocketListComponent } from '../../components/rocket/rocket-list/rocket-
 import { RocketDetailsComponent } from '../../components/rocket/rocket-details/rocket-details.component';
 import { CapsuleListComponent } from '../../components/capsule/capsule-list/capsule-list.component';
 import { CapsuleDetailsComponent } from '../../components/capsule/capsule-details/capsule-details.component';
+import { LaunchpadListComponent } from '../../components/launchpad/launchpad-list/launchpad-list.component';
+import { LaunchpadDetailsComponent } from '../../components/launchpad/launchpad-details/launchpad-details.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,6 +17,8 @@ const appRoutes: Routes = [
   { path: 'rockets/:id', component: RocketDetailsComponent },
   { path: 'capsules', component: CapsuleListComponent },
   { path: 'capsules/:id', component: CapsuleDetailsComponent },
+  { path: 'launchpads', component: LaunchpadListComponent },
+  { path: 'launchpad/:id', component: LaunchpadDetailsComponent },
   { path: 'about', component: CompanyComponent }
 ]
 
