@@ -5,6 +5,7 @@ import {Company} from "../models/company";
 import {catchError, map, tap} from "rxjs/internal/operators";
 import {LaunchFilter} from "../models/launchFilter";
 import { Launch } from '../models/launch';
+import {Capsule, CapsuleDetails, CapsuleFilter} from "../models/capsule";
 import {Rocket} from "../models/rocket";
 import {Launchpad} from "../models/launchpad";
 
@@ -82,6 +83,40 @@ export class SpacexApiService {
       );
   }
 
+  getCapsules(): Observable<Capsule[]> {
+    const requestEndpoint = `${this.baseUrl}/capsules`;
+    return this.http.get<Capsule[]>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  getCapsule(name: string): Observable<Capsule> {
+    const requestEndpoint = `${this.baseUrl}/capsules/${name}`;
+    return this.http.get<Capsule>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  getCapsulesDetails(filter?: CapsuleFilter): Observable<CapsuleDetails[]> {
+    const params = this.filtersToHttpParams(filter);
+
+    const requestEndpoint = `${this.baseUrl}/parts/caps`;
+    return this.http.get<CapsuleDetails[]>(requestEndpoint, {params})
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  getCapsuleDetails(serial: string): Observable<CapsuleDetails> {
+    const requestEndpoint = `${this.baseUrl}/parts/caps/${serial}`;
+    return this.http.get<CapsuleDetails>(requestEndpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
   getLaunchpads(): Observable<Launchpad[]> {
     const requestEndpoint = `${this.baseUrl}/launchpads`;
     return this.http.get<Launchpad[]>(requestEndpoint)
@@ -114,11 +149,11 @@ export class SpacexApiService {
       'Something bad happened; please try again later.');
   };
 
-	private filtersToHttpParams(filter: LaunchFilter): HttpParams {
-		let params = new HttpParams();
-		for (let key in filter) {
-		params = params.append(key, filter[key]);
-		}
+  private filtersToHttpParams(filter: Object): HttpParams {
+    let params = new HttpParams();
+    for (let key in filter) {
+      params = params.append(key, filter[key]);
+    }
 
 		return params;
 	}
