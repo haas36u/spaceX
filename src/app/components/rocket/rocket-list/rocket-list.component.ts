@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {SpacexApiService} from "../../../services/spacex-api.service";
+import {Rocket} from "../../../models/rocket";
 
 @Component({
   selector: 'app-rocket-list',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RocketListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private spacexApi: SpacexApiService) { }
+
+  public rockets: Rocket[] = [];
 
   ngOnInit() {
+    this.spacexApi.getRockets()
+      .subscribe(rockets => this.rockets = rockets);
   }
 
 }

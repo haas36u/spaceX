@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Rocket} from "../../../models/rocket";
 
 @Component({
   selector: 'app-rocket-thumb',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RocketThumbComponent implements OnInit {
 
+  @Input() rocket: Rocket;
+
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }
