@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {SpacexApiService} from "../../../services/spacex-api.service";
 import {Rocket} from "../../../models/rocket";
+import {Launch} from "../../../models/launch";
 
 @Component({
   selector: 'app-rocket-details',
@@ -10,13 +11,16 @@ import {Rocket} from "../../../models/rocket";
 })
 export class RocketDetailsComponent implements OnInit {
 
-  public rocket: Rocket;
+  public rocket: Rocket = null;
+  public launches: Launch[] = [];
 
   constructor(private route: ActivatedRoute, private spacexApi: SpacexApiService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.spacexApi.getRocket(params['id']).subscribe(rocket => this.rocket = rocket);
+      this.spacexApi.getAllLaunches({rocket_id: params['id']})
+        .subscribe(launches => this.launches = launches);
     });
   }
 
