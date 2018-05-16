@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Rocket} from "../../../models/rocket";
 
 @Component({
   selector: 'app-rocket-thumb',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rocket-thumb.component.css']
 })
 export class RocketThumbComponent implements OnInit {
+
+  @Input() rocket: Rocket
 
   constructor() { }
 
