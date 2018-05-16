@@ -1,0 +1,9 @@
+.rocket-list {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+app-rocket-thumb {
+  flex: 1;
+  margin: 1rem;
+}

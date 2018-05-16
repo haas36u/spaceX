@@ -1,0 +1,13 @@
+.status {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  float: right;
+}
+
+.status--active {
+  background: green;
+}
+.status--inactive {
+  background: red;
+}
