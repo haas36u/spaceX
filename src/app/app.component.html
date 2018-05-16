@@ -1,6 +1,6 @@
 <mat-sidenav-container class="container">
 	<mat-sidenav #sidenav [mode]="push">
-		<img src="assets/logo.png" alt="Logo SpaceX">
+		<img src="assets/logo.png"  routerLink="/" alt="Logo SpaceX">
 		<ul>
 			<li><a routerLink="/rockets">Rockets</a></li>
 			<li><a routerLink="/capsules">Capsules</a></li>
@@ -11,7 +11,9 @@
 	</mat-sidenav>
 	
 	<mat-sidenav-content>
-		<mat-icon (click)="sidenav.toggle()" class="menu-icon">menu</mat-icon>
+			<mat-toolbar>
+				<mat-icon (click)="sidenav.toggle()" class="menu-icon">menu</mat-icon>
+			</mat-toolbar>
 		
 		<router-outlet></router-outlet>
 	</mat-sidenav-content>
