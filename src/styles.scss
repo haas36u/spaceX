@@ -130,25 +130,3 @@ mat-card-content {
 .mat-card--header-image {
     background-size: cover;
 }
-
-
-/** ERROR **/
-.error_container {
-    text-align: center;
-
-    h1 {
-        font-size: 8em;
-        text-shadow: 2px 2px 7px;
-        width: 80%;
-        margin: 4rem auto;
-    }
-
-    h2 {
-        font-size: 2em;
-    }
-    
-    a {
-        font-size: 1.2rem;
-        color: #000;
-    }
-}
