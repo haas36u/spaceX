@@ -33,22 +33,37 @@ a {
 
 
 /** HEADER **/
+.mat-toolbar{
+    background-color: #181c1f;
+}
 .menu-icon {
     cursor: pointer;
     position: fixed;
-    background-color: #ffffff;
+    color: #ffffff;
     padding: 0.5rem;
 }
 .mat-sidenav {
+    text-transform: uppercase;
     padding: 1rem;
     background-color: #454552;
     color: #ffffff;
+}
+.mat-sidenav img:hover{
+    cursor: pointer;
 }
 .mat-sidenav ul {
     margin-top: 2rem;
 }
 .mat-sidenav li {
-    margin: 1rem 0;
+    margin: 1.5rem 0;
+}
+
+.mat-sidenav a {
+    border-bottom: 2px solid transparent;
+    transition: 0.5s border-bottom;
+}
+.mat-sidenav a:hover {
+    border-bottom-color: #CCAC55;
 }
 
 .mat-sidenav a {
