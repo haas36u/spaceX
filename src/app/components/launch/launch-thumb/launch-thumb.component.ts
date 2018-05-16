@@ -4,7 +4,7 @@ import { Launch } from '../../../models/launch';
 @Component({
   selector: 'app-launch-thumb',
   templateUrl: './launch-thumb.component.html',
-  styleUrls: ['./launch-thumb.component.css']
+  styleUrls: ['./launch-thumb.component.scss']
 })
 export class LaunchThumbComponent implements OnInit {
 

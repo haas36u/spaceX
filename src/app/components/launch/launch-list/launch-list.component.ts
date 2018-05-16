@@ -5,7 +5,7 @@ import { Launch } from '../../../models/launch';
 @Component({
   selector: 'app-launch-list',
   templateUrl: './launch-list.component.html',
-  styleUrls: ['./launch-list.component.css']
+  styleUrls: ['./launch-list.component.scss']
 })
 export class LaunchListComponent implements OnInit {
 
