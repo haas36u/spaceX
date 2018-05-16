@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SpacexApiService } from '../../../services/spacex-api.service';
-import { Launch } from '../../../models/launch';
+import { Launch, Order } from '../../../models/launch';
 
 @Component({
   selector: 'app-launch-list',
@@ -16,16 +16,16 @@ export class LaunchListComponent implements OnInit {
   constructor(private spacexApiService: SpacexApiService) { }
 
   ngOnInit() {
-    this.spacexApiService.getAllLaunches().subscribe(launches => {
+    this.spacexApiService.getAllLaunches({order: Order.desc}).subscribe(launches => {
         this.allLaunches = launches;
       }
     );
 
-    this.spacexApiService.getPastLaunches().subscribe(launches => {
+    this.spacexApiService.getPastLaunches({order: Order.desc}).subscribe(launches => {
       this.pastLaunches = launches;
     });
 
-    this.spacexApiService.getUpcomingLaunches().subscribe(launches => {
+    this.spacexApiService.getUpcomingLaunches({order: Order.desc}).subscribe(launches => {
       this.upcomingLaunches = launches;
     });
   }

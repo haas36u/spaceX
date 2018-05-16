@@ -1,9 +1,15 @@
 
 <mat-card>
   <mat-card-header>
-    <div mat-card-avatar class="mat-card--header-image" [ngStyle]="{'background-image': 'url(' + launch.links.mission_patch_small + ' )'}"></div>
+    <div mat-card-avatar class="mat-card--header-image" [ngStyle]="{'background-image': 'url(' + launch.links.mission_patch_small + ' )'}" *ngIf="launch.links.mission_patch_small"></div>
+    <div mat-card-avatar class="mat-card--header-image" [ngStyle]="{'background-image': 'url(assets/nasa-default-card-icon.png)'}" *ngIf="!launch.links.mission_patch_small"></div>
     <mat-card-title>{{launch.mission_name}}</mat-card-title>
     <mat-card-subtitle>{{launch.launch_date_utc}}</mat-card-subtitle>
+    <span
+      class="status"
+      [ngClass]="{'status--active': launch.launch_success, 'status--inactive': !launch.launch_success}"
+      matTooltip="{{ launch.launch_success ? 'Launch Success' : 'Launch Failed' }}"
+    ></span>
   </mat-card-header>
   <mat-card-content>
     {{launch.details}}

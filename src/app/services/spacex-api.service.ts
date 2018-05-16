@@ -27,11 +27,11 @@ export class SpacexApiService {
 		);
 	}
 
-	getLastLaunch(filter?: LaunchFilter): Observable<Launch[]> {
+	getLastestLaunch(filter?: LaunchFilter): Observable<Launch> {
 		const params = this.filtersToHttpParams(filter);
 
 		const requestEndpoint = `${this.baseUrl}/launches/latest`;
-		return this.http.get<Launch[]>(requestEndpoint, {params})
+		return this.http.get<Launch>(requestEndpoint, {params})
 		.pipe(
 			catchError(this.handleError)
 		);

@@ -6,6 +6,7 @@ import { MatCardModule } from "@angular/material/card";
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import { MatTooltipModule } from "@angular/material/tooltip";
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { MatTooltipModule } from "@angular/material/tooltip";
     MatToolbarModule,
     MatCardModule,
     MatTooltipModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTabsModule
   ],
   declarations: []
 })
