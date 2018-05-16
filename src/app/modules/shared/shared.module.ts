@@ -4,10 +4,11 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from "@angular/material/card";
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
 import { MatTooltipModule } from "@angular/material/tooltip";
-import {MatButtonModule} from "@angular/material/button";
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   imports: [
@@ -16,12 +17,13 @@ import {MatDividerModule} from '@angular/material/divider';
   exports: [
     MatSidenavModule,
     MatIconModule,
-    MatCardModule,
     MatToolbarModule,
+    MatCardModule,
     MatTooltipModule,
     MatButtonModule,
     MatExpansionModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTabsModule
   ],
   declarations: []
 })
