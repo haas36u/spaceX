@@ -1,3 +1,103 @@
-<p>
-  rocket-details works!
-</p>
+<div *ngIf="rocket !== null" class="content">
+  <button mat-raised-button color="primary" routerLink="/rockets">Back</button>
+  <h1>
+    {{ rocket.name }}
+    <span
+      class="status"
+      [ngClass]="{'status--active': rocket.active, 'status--inactive': !rocket.active}"
+      matTooltip="{{ rocket.active ? 'Active' : 'Inactive' }}"
+    ></span>
+  </h1>
+
+  <p>{{ rocket.description }}</p>
+
+  <mat-divider></mat-divider>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Technicals specifications
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <table>
+      <tr>
+        <th>Cost per launch</th>
+        <td>{{rocket.cost_per_launch}} $</td>
+      </tr>
+      <tr>
+        <th>Height</th>
+        <td>{{rocket.height.meters}}</td>
+      </tr>
+      <tr>
+        <th>Mass</th>
+        <td>{{rocket.mass.kg}}</td>
+      </tr>
+      <tr>
+        <th>Diameter</th>
+        <td>{{rocket.diameter.meters}}</td>
+      </tr>
+    </table>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Engine
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <table>
+      <tr>
+        <th>Number</th>
+        <td>{{rocket.engines.number}}</td>
+      </tr>
+      <tr>
+        <th>Type</th>
+        <td>{{rocket.engines.type}}</td>
+      </tr>
+      <tr>
+        <th>Version</th>
+        <td>{{rocket.engines.version}}</td>
+      </tr>
+      <tr>
+        <th>Layout</th>
+        <td>{{rocket.engines.layout}}</td>
+      </tr>
+      <tr>
+        <th>Engine loss max</th>
+        <td>{{rocket.engines.engine_loss_max}}</td>
+      </tr>
+      <tr>
+        <th>Propellant 1</th>
+        <td>{{rocket.engines.propellant_1}}</td>
+      </tr>
+      <tr>
+        <th>Propellant 2</th>
+        <td>{{rocket.engines.propellant_2}}</td>
+      </tr>
+      <tr>
+        <th>Thrust sea level</th>
+        <td>{{rocket.engines.thrust_sea_level.kN}} kN</td>
+      </tr>
+      <tr>
+        <th>Thrust sea vacuum</th>
+        <td>{{rocket.engines.thrust_vacuum.kN}} kN</td>
+      </tr>
+      <tr>
+        <th>Thrust to weight</th>
+        <td>{{rocket.engines.thrust_to_weight}}</td>
+      </tr>
+    </table>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Launches
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="thumbnail-list">
+      <app-launch-thumb *ngFor="let launch of launches" [launch]="launch"></app-launch-thumb>
+    </div>
+  </mat-expansion-panel>
+
+
+</div>

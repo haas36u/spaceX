@@ -7,28 +7,28 @@ html, html * {
 }
 
 body {
-    font-size: 1em;
-    padding: 0;
-    margin: 0;
+  font-size: 1em;
+  padding: 0;
+  margin: 0;
 }
 
 ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .container {
-    background-color: transparent !important;
-    position: absolute !important;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  background-color: transparent !important;
+  position: absolute !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .content {
@@ -44,64 +44,63 @@ h1{
 
 
 /** HEADER **/
-.mat-toolbar{
-    background-color: #181c1f;
+.mat-toolbar {
+  background-color: #181c1f;
 }
+
 .menu-icon {
     cursor: pointer;
     color: #ffffff;
     padding: 0.5rem;
 }
+
 .mat-sidenav {
-    text-transform: uppercase;
-    padding: 1rem;
-    background-color: #454552;
+  text-transform: uppercase;
+  padding: 1rem;
+  background-color: #454552;
+  color: #ffffff;
+
+  img:hover {
+    cursor: pointer;
+  }
+  ul {
+    margin-top: 2rem;
+
+    li {
+      margin: 1.5rem 0;
+    }
+  }
+
+  a {
+    border-bottom: 2px solid transparent;
+    transition: 0.5s border-bottom;
     color: #ffffff;
-
-    img:hover{
-        cursor: pointer;
-    }
-    ul {
-        margin-top: 2rem;
-
-        li {
-            margin: 1.5rem 0;
-        }
-    }
-    
-    a {
-        border-bottom: 2px solid transparent;
-        transition: 0.5s border-bottom;
-        color: #ffffff;
-        font-size: 1rem;
-    }
-    a:hover {
-        border-bottom-color: #CCAC55;
-    }
+    font-size: 1rem;
+  }
+  a:hover {
+    border-bottom-color: #CCAC55;
+  }
 }
 
 .example-spacer {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
-
-
-
 
 /** STATUS **/
 .status {
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    float: right;
-  }
-  
-  .status--active {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  float: right;
+
+  &--active {
     background: green;
   }
-  .status--inactive {
+
+  &--inactive {
     background: red;
   }
-  
+}
 
 /** CARDS **/
 .thumbnail-list {
