@@ -8,11 +8,12 @@ import {Rocket} from "../../../models/rocket";
 })
 export class RocketThumbComponent implements OnInit {
 
-  @Input() rocket: Rocket
+  @Input() rocket: Rocket;
 
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }

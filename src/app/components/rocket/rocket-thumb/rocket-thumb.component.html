@@ -1,3 +1,6 @@
-<p>
-  rocket-thumb works!
-</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ rocket.name }}</mat-card-title>
+    <span class="status" [ngClass]="{'status--active': rocket.active, 'status--inactive': !rocket.active}"></span>
+  </mat-card-header>
+</mat-card>

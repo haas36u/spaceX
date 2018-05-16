@@ -15,7 +15,10 @@ export class RocketListComponent implements OnInit {
 
   ngOnInit() {
     this.spacexApi.getRockets()
-      .subscribe(rockets => this.rockets = rockets);
+      .subscribe(rockets => {
+        this.rockets = rockets;
+        console.log(rockets)
+      });
   }
 
 }
