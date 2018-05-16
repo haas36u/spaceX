@@ -27,41 +27,41 @@ export class SpacexApiService {
 		);
 	}
 
-	getLastLaunch(filter?: LaunchFilter): Observable<Launch> {
+	getLastLaunch(filter?: LaunchFilter): Observable<Launch[]> {
 		const params = this.filtersToHttpParams(filter);
 
 		const requestEndpoint = `${this.baseUrl}/launches/latest`;
-		return this.http.get<Launch>(requestEndpoint, {params})
+		return this.http.get<Launch[]>(requestEndpoint, {params})
 		.pipe(
 			catchError(this.handleError)
 		);
 	}
 
-	getPastLaunches(filter?: LaunchFilter): Observable<Launch> {
+	getPastLaunches(filter?: LaunchFilter): Observable<Launch[]> {
 		const params = this.filtersToHttpParams(filter);
 
 		const requestEndpoint = `${this.baseUrl}/launches`;
-		return this.http.get<Launch>(requestEndpoint, {params})
+		return this.http.get<Launch[]>(requestEndpoint, {params})
 		.pipe(
 			catchError(this.handleError)
 		);
 	}
 
-	getUpcomingLaunches(filter?: LaunchFilter): Observable<Launch> {
+	getUpcomingLaunches(filter?: LaunchFilter): Observable<Launch[]> {
 		const params = this.filtersToHttpParams(filter);
 
 		const requestEndpoint = `${this.baseUrl}/launches/upcoming`;
-		return this.http.get<Launch>(requestEndpoint, {params})
+		return this.http.get<Launch[]>(requestEndpoint, {params})
 		.pipe(
 			catchError(this.handleError)
 		);
 	}
 
-	getAllLaunches(filter?: LaunchFilter): Observable<Launch> {
+	getAllLaunches(filter?: LaunchFilter): Observable<Launch[]> {
 		const params = this.filtersToHttpParams(filter);
 
 		const requestEndpoint = `${this.baseUrl}/launches/all`;
-		return this.http.get<Launch>(requestEndpoint, {params})
+		return this.http.get<Launch[]>(requestEndpoint, {params})
 		.pipe(
 			catchError(this.handleError)
 		);

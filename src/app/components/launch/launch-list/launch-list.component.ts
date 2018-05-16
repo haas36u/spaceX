@@ -9,16 +9,25 @@ import { Launch } from '../../../models/launch';
 })
 export class LaunchListComponent implements OnInit {
 
-  launches: Launch;
+  allLaunches: Launch[] = [];
+  pastLaunches: Launch[] = [];
+  upcomingLaunches: Launch[] = [];
 
   constructor(private spacexApiService: SpacexApiService) { }
 
   ngOnInit() {
-    return this.spacexApiService.getAllLaunches().subscribe(data => {
-        this.launches = data;
-        console.log(this.launches)
+    this.spacexApiService.getAllLaunches().subscribe(launches => {
+        this.allLaunches = launches;
       }
     );
+
+    this.spacexApiService.getPastLaunches().subscribe(launches => {
+      this.pastLaunches = launches;
+    });
+
+    this.spacexApiService.getUpcomingLaunches().subscribe(launches => {
+      this.upcomingLaunches = launches;
+    });
   }
 
 }
