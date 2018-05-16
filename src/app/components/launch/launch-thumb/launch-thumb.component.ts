@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Launch } from '../../../models/launch';
 
 @Component({
   selector: 'app-launch-thumb',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./launch-thumb.component.css']
 })
 export class LaunchThumbComponent implements OnInit {
+
+  @Input() launch: Launch;
 
   constructor() { }
 

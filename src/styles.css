@@ -75,3 +75,18 @@ a {
 .example-spacer {
     flex: 1 1 auto;
 }
+
+
+
+
+/** CARD **/
+.mat-card {
+    display: inline-block !important;
+    vertical-align: top;
+    width: 20%;
+    margin: 1rem;
+}
+
+.mat-card--header-image {
+    background-size: cover;
+}
