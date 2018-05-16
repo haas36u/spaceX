@@ -11,6 +11,7 @@ import { CapsuleDetailsComponent } from '../../components/capsule/capsule-detail
 import { LaunchpadListComponent } from '../../components/launchpad/launchpad-list/launchpad-list.component';
 import { LaunchpadDetailsComponent } from '../../components/launchpad/launchpad-details/launchpad-details.component';
 import { LaunchListComponent } from '../../components/launch/launch-list/launch-list.component';
+import { NotFoundComponent } from '../../components/not-found/not-found.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,7 +22,8 @@ const appRoutes: Routes = [
   { path: 'launchpads', component: LaunchpadListComponent },
   { path: 'launchpad/:id', component: LaunchpadDetailsComponent },
   { path: 'launches', component: LaunchListComponent },
-  { path: 'about', component: CompanyComponent }
+  { path: 'about', component: CompanyComponent },
+  { path: '**', component: NotFoundComponent }
 ]
 
 @NgModule({
