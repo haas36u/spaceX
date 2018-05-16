@@ -47,31 +47,48 @@ a {
     padding: 1rem;
     background-color: #454552;
     color: #ffffff;
-}
-.mat-sidenav img:hover{
-    cursor: pointer;
-}
-.mat-sidenav ul {
-    margin-top: 2rem;
-}
-.mat-sidenav li {
-    margin: 1.5rem 0;
-}
 
-.mat-sidenav a {
-    border-bottom: 2px solid transparent;
-    transition: 0.5s border-bottom;
-}
-.mat-sidenav a:hover {
-    border-bottom-color: #CCAC55;
-}
+    img:hover{
+        cursor: pointer;
+    }
+    ul {
+        margin-top: 2rem;
 
-.mat-sidenav a {
-    color: #ffffff;
-    font-size: 1rem;
+        li {
+            margin: 1.5rem 0;
+        }
+    }
+    
+    a {
+        border-bottom: 2px solid transparent;
+        transition: 0.5s border-bottom;
+        color: #ffffff;
+        font-size: 1rem;
+    }
+    a:hover {
+        border-bottom-color: #CCAC55;
+    }
 }
-
 
 .example-spacer {
     flex: 1 1 auto;
 }
+
+
+
+
+/** STATUS **/
+.status {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    float: right;
+  }
+  
+  .status--active {
+    background: green;
+  }
+  .status--inactive {
+    background: red;
+  }
+  

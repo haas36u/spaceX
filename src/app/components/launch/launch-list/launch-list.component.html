@@ -1,3 +1,17 @@
-<p>
-  launch-list works!
-</p>
+<mat-tab-group>
+  <mat-tab label="All Launches">
+    <div class="thumbnail-list">
+      <app-launch-thumb *ngFor="let launch of allLaunches" [launch]="launch"></app-launch-thumb>
+    </div>
+  </mat-tab>
+  <mat-tab label="Past launches">
+		<div class="thumbnail-list">
+      <app-launch-thumb *ngFor="let launch of pastLaunches" [launch]="launch"></app-launch-thumb>
+    </div>
+	</mat-tab>
+	<mat-tab label="Upcoming launches">
+		<div class="thumbnail-list">
+      <app-launch-thumb *ngFor="let launch of upcomingLaunches" [launch]="launch"></app-launch-thumb>
+    </div>
+  </mat-tab>
+</mat-tab-group>
