@@ -82,11 +82,11 @@ a {
   border-radius: 50%;
   float: right;
 
-  .&--active {
+  &--active {
     background: green;
   }
 
-  .&--inactive {
+  &--inactive {
     background: red;
   }
 }
