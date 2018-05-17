@@ -135,13 +135,11 @@ export class SpacexApiService {
 
   getCores(filter?: CoreFilter): Observable<Core[]> {
     const params = this.filtersToHttpParams(filter);
-
     const requestEndpoint = `${this.baseUrl}/parts/cores`;
     return this.http.get<Core[]>(requestEndpoint, {params})
       .pipe(
         catchError(this.handleError)
       );
-
   }
 
   getCore(serial: string): Observable<Core> {

@@ -13,6 +13,8 @@
     </div>
   </div>
 
+  <app-core-filter (filterCore)="loadCores($event)"></app-core-filter>
+
   <div class="thumbnail-list">
     <app-core-thumb *ngFor="let core of cores" [core]="core"></app-core-thumb>
   </div>
