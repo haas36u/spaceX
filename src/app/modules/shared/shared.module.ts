@@ -9,6 +9,12 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatNativeDateModule} from "@angular/material";
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {FormsModule} from "@angular/forms";
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { MomentModule } from 'ngx-moment';
 
 @NgModule({
@@ -25,6 +31,12 @@ import { MomentModule } from 'ngx-moment';
     MatExpansionModule,
     MatDividerModule,
     MatTabsModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    FormsModule,
+    MatAutocompleteModule,
+    MatSlideToggleModule,
     MomentModule
   ],
   declarations: []

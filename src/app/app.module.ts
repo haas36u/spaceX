@@ -20,6 +20,7 @@ import { LaunchpadListComponent } from './components/launchpad/launchpad-list/la
 import { LaunchpadThumbComponent } from './components/launchpad/launchpad-thumb/launchpad-thumb.component';
 import { LaunchListComponent } from './components/launch/launch-list/launch-list.component';
 import { LaunchThumbComponent } from './components/launch/launch-thumb/launch-thumb.component';
+import { LaunchFilterComponent } from './components/launch/launch-filter/launch-filter.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import {NgHttpLoaderModule} from "ng-http-loader/ng-http-loader.module";
 
@@ -39,6 +40,7 @@ import {NgHttpLoaderModule} from "ng-http-loader/ng-http-loader.module";
     LaunchpadThumbComponent,
     LaunchListComponent,
     LaunchThumbComponent,
+    LaunchFilterComponent,
     NotFoundComponent
   ],
   imports: [
