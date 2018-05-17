@@ -23,6 +23,9 @@ import { LaunchThumbComponent } from './components/launch/launch-thumb/launch-th
 import { LaunchFilterComponent } from './components/launch/launch-filter/launch-filter.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import {NgHttpLoaderModule} from 'ng-http-loader/ng-http-loader.module';
+import { CoresThumbComponent } from './components/cores/cores-thumb/cores-thumb.component';
+import { CoresListComponent } from './components/cores/cores-list/cores-list.component';
+import { CoresDetailsComponent } from './components/cores/cores-details/cores-details.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,10 @@ import {NgHttpLoaderModule} from 'ng-http-loader/ng-http-loader.module';
     LaunchListComponent,
     LaunchThumbComponent,
     LaunchFilterComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CoresThumbComponent,
+    CoresListComponent,
+    CoresDetailsComponent
   ],
   imports: [
     BrowserModule,
