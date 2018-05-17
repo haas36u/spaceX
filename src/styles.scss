@@ -180,6 +180,13 @@ table{
   text-align: left;
 }
 
+.mat-form-field, .mat-slide-toggle {
+  margin: 0 1rem;
+}
+.mat-option-text, .mat-select-value-text {
+  text-transform: capitalize;
+}
+
 
 /** LEGEND **/
 .legend {

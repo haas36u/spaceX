@@ -26,6 +26,7 @@ import {NgHttpLoaderModule} from 'ng-http-loader/ng-http-loader.module';
 import { CoreThumbComponent } from './components/core/core-thumb/core-thumb.component';
 import { CoreListComponent } from './components/core/core-list/core-list.component';
 import { CoreDetailsComponent } from './components/core/core-details/core-details.component';
+import { CoreFilterComponent } from './components/core/core-filter/core-filter.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { CoreDetailsComponent } from './components/core/core-details/core-detail
     NotFoundComponent,
     CoreThumbComponent,
     CoreListComponent,
-    CoreDetailsComponent
+    CoreDetailsComponent,
+    CoreFilterComponent
   ],
   imports: [
     BrowserModule,
