@@ -21,6 +21,7 @@ import { LaunchpadThumbComponent } from './components/launchpad/launchpad-thumb/
 import { LaunchListComponent } from './components/launch/launch-list/launch-list.component';
 import { LaunchThumbComponent } from './components/launch/launch-thumb/launch-thumb.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import {NgHttpLoaderModule} from "ng-http-loader/ng-http-loader.module";
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    NgHttpLoaderModule,
     SharedModule
   ],
   providers: [],
