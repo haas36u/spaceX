@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><span class="text-bold">{{core.core_serial}}</span></mat-card-title>
+    <mat-card-subtitle>{{core.original_launch | amDateFormat: 'YYYY-MM-DD HH:mm'}}</mat-card-subtitle>
+    <div class="launch-success">
+      Status : 
+        <span
+        class="status"
+        [ngClass]="{'status--active': core.status == 'active', 'status--warning': core.status == 'expended', 'status--inactive': core.status == 'retired', 'status--destroyed' : core.status == 'destroyed'}"
+        matTooltip="{{ core.status }}"
+      ></span>
+    </div>
+    
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{core.details}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+      <button mat-raised-button color="primary" routerLink="/cores/{{ core.core_serial }}">Details</button>
+  </mat-card-actions>
+</mat-card>

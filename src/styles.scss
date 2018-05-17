@@ -103,6 +103,14 @@ h1{
   &--inactive {
     background: red;
   }
+
+  &--warning {
+    background: orange;
+  }
+
+  &--destroyed {
+    background: grey;
+  }
 }
 
 /** CARDS **/
@@ -111,7 +119,7 @@ h1{
     flex-wrap: wrap;
 }
 
-app-launch-thumb, app-rocket-thumb, app-launchpad-thumb, app-capsule-thumb{
+app-launch-thumb, app-rocket-thumb, app-launchpad-thumb, app-capsule-thumb, app-core-thumb{
     flex: 1 0 25%;
     padding: 24px;
     margin: 1rem;
@@ -170,4 +178,31 @@ mat-card-content {
 }
 table{
   text-align: left;
+}
+
+/** LEGEND **/
+.legend {
+  text-align: right;
+}
+.legend .legend-title {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+.legend-scale ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.legend-scale ul li {
+  display: inline-block;
+  vertical-align: top;
+  width: 60px;
+  text-align: center;
+  list-style: none;
+  font-size: 0.8rem;
+}
+ul.legend-labels li span {
+  display: block;
+  height: 15px;
+  width: 60px;
 }

@@ -11,6 +11,8 @@ import { CapsuleDetailsComponent } from '../../components/capsule/capsule-detail
 import { LaunchpadListComponent } from '../../components/launchpad/launchpad-list/launchpad-list.component';
 import { LaunchpadDetailsComponent } from '../../components/launchpad/launchpad-details/launchpad-details.component';
 import { LaunchListComponent } from '../../components/launch/launch-list/launch-list.component';
+import { CoreListComponent } from '../../components/core/core-list/core-list.component';
+import { CoreDetailsComponent } from '../../components/core/core-details/core-details.component';
 import { NotFoundComponent } from '../../components/not-found/not-found.component';
 
 const appRoutes: Routes = [
@@ -22,6 +24,8 @@ const appRoutes: Routes = [
   { path: 'launchpads', component: LaunchpadListComponent },
   { path: 'launchpads/:id', component: LaunchpadDetailsComponent },
   { path: 'launches', component: LaunchListComponent },
+  { path: 'cores', component: CoreListComponent },
+  { path: 'cores/:id', component: CoreDetailsComponent },
   { path: 'about', component: CompanyComponent },
   { path: '**', component: NotFoundComponent }
 ]
