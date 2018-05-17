@@ -20,6 +20,7 @@ import { LaunchpadListComponent } from './components/launchpad/launchpad-list/la
 import { LaunchpadThumbComponent } from './components/launchpad/launchpad-thumb/launchpad-thumb.component';
 import { LaunchListComponent } from './components/launch/launch-list/launch-list.component';
 import { LaunchThumbComponent } from './components/launch/launch-thumb/launch-thumb.component';
+import { LaunchFilterComponent } from './components/launch/launch-filter/launch-filter.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { LaunchThumbComponent } from './components/launch/launch-thumb/launch-th
     LaunchpadListComponent,
     LaunchpadThumbComponent,
     LaunchListComponent,
-    LaunchThumbComponent
+    LaunchThumbComponent,
+    LaunchFilterComponent
   ],
   imports: [
     BrowserModule,
