@@ -42,6 +42,9 @@ h1{
     font-weight: 400;
 }
 
+.text-bold {
+  font-weight: bold;
+}
 
 /** HEADER **/
 .mat-toolbar {
@@ -119,6 +122,15 @@ app-launch-thumb, app-rocket-thumb{
     padding: 0 !important;
     flex-direction: column;
     height: 100%;
+
+    .launch-success {
+      flex-grow: 1;
+      text-align: right;
+
+      .status {
+        margin-left: 0.2rem;
+      }
+    }
 }
 
 mat-card-content {
