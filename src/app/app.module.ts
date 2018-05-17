@@ -22,7 +22,7 @@ import { LaunchListComponent } from './components/launch/launch-list/launch-list
 import { LaunchThumbComponent } from './components/launch/launch-thumb/launch-thumb.component';
 import { LaunchFilterComponent } from './components/launch/launch-filter/launch-filter.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import {NgHttpLoaderModule} from "ng-http-loader/ng-http-loader.module";
+import {NgHttpLoaderModule} from 'ng-http-loader/ng-http-loader.module';
 
 @NgModule({
   declarations: [
