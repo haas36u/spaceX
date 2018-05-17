@@ -1,3 +1,96 @@
-<p>
-  capsule-details works!
-</p>
+<div *ngIf="capsule !== null" class="content">
+  <button mat-raised-button color="primary" routerLink="/capsules">Back</button>
+  <h1>
+    {{ capsule.name }}
+    <span
+      class="status"
+      [ngClass]="{'status--active': capsule.active, 'status--inactive': !capsule.active}"
+      matTooltip="{{ capsule.active ? 'Active' : 'Inactive' }}"
+    ></span>
+  </h1>
+
+  <mat-divider></mat-divider>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Heat Shield
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <table>
+      <tr>
+        <th>Material</th>
+        <td>{{capsule.heat_shield.material}}</td>
+      </tr>
+      <tr>
+        <th>Size meters</th>
+        <td>{{capsule.heat_shield.size_meters}}</td>
+      </tr>
+      <tr>
+        <th>Temps degrees</th>
+        <td>{{capsule.heat_shield.temp_degrees}}</td>
+      </tr>
+      <tr>
+        <th>Dev partner</th>
+        <td>{{capsule.heat_shield.dev_partner}}</td>
+      </tr>
+    </table>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Payload
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <table>
+      <tr>
+        <th>Launch Mass</th>
+        <td>{{capsule.launch_payload_mass.kg}}</td>
+      </tr>
+      <tr>
+        <th>Launch cubic meter</th>
+        <td>{{capsule.launch_payload_vol.cubic_meters}}</td>
+      </tr>
+      <tr>
+        <th>Return Mass</th>
+        <td>{{capsule.return_payload_mass.kg}}</td>
+      </tr>
+      <tr>
+        <th>Return cubic meter</th>
+        <td>{{capsule.return_payload_vol.cubic_meters}}</td>
+      </tr>
+    </table>
+  </mat-expansion-panel>
+
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Thrusters
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <table *ngFor="let thruster of capsule.thrusters">
+      <tr>
+        <th>Type</th>
+        <td>{{thruster.type}}</td>
+      </tr>
+      <tr>
+        <th>Amount</th>
+        <td>{{thruster.amount}}</td>
+      </tr>
+      <tr>
+        <th>Pods</th>
+        <td>{{thruster.pods}}</td>
+      </tr>
+      <tr>
+        <th>Fuel</th>
+        <td>{{thruster.fuel_1}}</td>
+      </tr>
+      <tr>
+        <th></th>
+        <td>{{thruster.fuel_2}}</td>
+      </tr>
+    </table>
+  </mat-expansion-panel>
+</div>
