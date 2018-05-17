@@ -23,6 +23,7 @@ import { LaunchThumbComponent } from './components/launch/launch-thumb/launch-th
 import { LaunchFilterComponent } from './components/launch/launch-filter/launch-filter.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import {NgHttpLoaderModule} from 'ng-http-loader/ng-http-loader.module';
+import { GmapComponent } from './components/gmap/gmap.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {NgHttpLoaderModule} from 'ng-http-loader/ng-http-loader.module';
     LaunchListComponent,
     LaunchThumbComponent,
     LaunchFilterComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    GmapComponent
   ],
   imports: [
     BrowserModule,
