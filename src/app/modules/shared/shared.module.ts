@@ -9,6 +9,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatTabsModule} from '@angular/material/tabs';
+import { MomentModule } from 'ngx-moment';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatButtonModule,
     MatExpansionModule,
     MatDividerModule,
-    MatTabsModule
+    MatTabsModule,
+    MomentModule
   ],
   declarations: []
 })

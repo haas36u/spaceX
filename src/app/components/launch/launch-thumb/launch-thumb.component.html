@@ -3,7 +3,7 @@
     <div mat-card-avatar class="mat-card--header-image" [ngStyle]="{'background-image': 'url(' + launch.links.mission_patch_small + ' )'}" *ngIf="launch.links.mission_patch_small"></div>
     <div mat-card-avatar class="mat-card--header-image" [ngStyle]="{'background-image': 'url(assets/nasa-default-card-icon.png)'}" *ngIf="!launch.links.mission_patch_small"></div>
     <mat-card-title><span class="text-bold">{{launch.mission_name}}</span></mat-card-title>
-    <mat-card-subtitle>{{launch.launch_date_utc}}</mat-card-subtitle>
+    <mat-card-subtitle>{{launch.launch_date_utc | amDateFormat: 'YYYY-MM-DD HH:mm'}}</mat-card-subtitle>
     <div class="launch-success">
       Launch success : 
         <span
@@ -20,6 +20,8 @@
     <p>{{launch.details}}</p>
   </mat-card-content>
   <mat-card-actions>
-      <a href="{{ launch.links.video_link }}" target="_blank" *ngIf="launch.links.video_link"><button mat-raised-button color="primary">Vidéo youtube</button></a>
+      <a href="{{ launch.links.video_link }}" target="_blank" *ngIf="launch.links.video_link"><button mat-raised-button color="primary">Youtube Video</button></a>
   </mat-card-actions>
 </mat-card>
+
+
