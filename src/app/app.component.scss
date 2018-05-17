@@ -1,38 +1,46 @@
 /** HEADER **/
 .mat-toolbar {
-    background-color: #181c1f;
-  }
-  
-  .menu-icon {
-      cursor: pointer;
-      color: #ffffff;
-      padding: 0.5rem;
-  }
-  
-  .mat-sidenav {
-    text-transform: uppercase;
-    padding: 1rem;
-    background-color: #454552;
+  background-color: #181c1f;
+}
+
+.menu-icon {
+    cursor: pointer;
     color: #ffffff;
-  
-    img:hover {
-      cursor: pointer;
-    }
-    ul {
-      margin-top: 2rem;
-  
-      li {
-        margin: 1.5rem 0;
-      }
-    }
-  
-    a {
-      border-bottom: 2px solid transparent;
-      transition: 0.5s border-bottom;
-      color: #ffffff;
-      font-size: 1rem;
-    }
-    a:hover {
-      border-bottom-color: #CCAC55;
+    padding: 0.5rem;
+}
+
+.mat-sidenav {
+  text-transform: uppercase;
+  padding: 1rem;
+  background-color: #454552;
+  color: #ffffff;
+
+  img:hover {
+    cursor: pointer;
+  }
+  ul {
+    margin-top: 2rem;
+
+    li {
+      margin: 1.5rem 0;
     }
   }
+
+  a {
+    border-bottom: 2px solid transparent;
+    transition: 0.5s border-bottom;
+    color: #ffffff;
+    font-size: 1rem;
+  }
+  a:hover {
+    border-bottom-color: #CCAC55;
+  }
+}
+
+footer {
+  background-color: #181c1f;
+  padding: 1rem;
+  text-align: right;
+  color: #666;
+  margin-top: 1rem;
+}

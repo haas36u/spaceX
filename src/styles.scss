@@ -6,6 +6,15 @@ html, html * {
   font-family: Roboto;
 }
 
+*{
+  margin:0;
+  padding:0;
+}
+
+body, html {
+  height: 100%;
+}
+
 body {
   font-size: 1em;
   padding: 0;
@@ -35,6 +44,11 @@ a {
   margin: 1rem;
 }
 
+.small-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 h1{
   text-transform: uppercase;
   border-bottom: 2px solid #CCAC55;
@@ -44,10 +58,6 @@ h1{
 
 .text-bold {
   font-weight: bold;
-}
-
-.example-spacer {
-  flex: 1 1 auto;
 }
 
 /** STATUS **/

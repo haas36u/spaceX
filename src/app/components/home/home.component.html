@@ -4,3 +4,10 @@
         <p>Private company founded in {{company.founded}} by {{company.founder}}</p>
     </div>
 </div>
+
+<div class="small-content">
+    <h1>Last launch</h1>
+    <div class="thumbnail-list">
+        <app-launch-thumb *ngFor="let launch of launch" [launch]="launch"></app-launch-thumb>
+    </div>
+</div>
