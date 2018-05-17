@@ -1,3 +1,26 @@
-<p>
-  launchpad-details works!
-</p>
+<div *ngIf="launchpad !== null" class="content">
+  <button mat-raised-button color="primary" routerLink="/launchpads">Back</button>
+  <h1>
+    {{ launchpad.full_name }}
+
+    <span
+    class="status"
+    [ngClass]="{'status--active': launchpad.status == 'active', 'status--inactive': launchpad.status == 'retired'}"
+    matTooltip="{{ launchpad.status }}"
+  ></span>
+  </h1>
+
+  <p>{{ launchpad.details }}</p>
+
+  <mat-divider></mat-divider>
+
+  <p><span class="text-bold">Location : </span>{{launchpad.location.name}} - {{launchpad.location.region}}</p>
+  <p><span class="text-bold">Latitude : </span>{{launchpad.location.latitude}}</p>
+  <p><span class="text-bold">Longitude : </span>{{launchpad.location.longitude}}</p>
+
+  <mat-divider></mat-divider>
+  <p><span class="text-bold">Vehicles : </span></p>
+  <ul style="padding-left: 1rem; list-style-type: disc;">
+    <li *ngFor="let vehicle of launchpad.vehicles_launched">{{vehicle}}</li>
+  </ul>
+</div>  
