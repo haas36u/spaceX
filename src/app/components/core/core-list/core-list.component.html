@@ -1,0 +1,21 @@
+<div class="content">
+  <h1>Our cores</h1>
+
+  <div class="legend">
+    <div class="legend-title">Status Legend</div>
+    <div class="legend-scale">
+      <ul class="legend-labels">
+        <li><span class="status--active"></span>Active</li>
+        <li><span class="status--warning"></span>Expended</li>
+        <li><span class="status--inactive"></span>Retired</li>
+        <li><span class="status--destroyed"></span>Destroyed</li>
+      </ul>
+    </div>
+  </div>
+
+  <app-core-filter (filterCore)="loadCores($event)"></app-core-filter>
+
+  <div class="thumbnail-list">
+    <app-core-thumb *ngFor="let core of cores" [core]="core"></app-core-thumb>
+  </div>
+</div>  
