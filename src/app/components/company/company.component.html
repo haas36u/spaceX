@@ -1,3 +1,60 @@
-<p>
-  company works!
-</p>
+<div *ngIf="company !== null">
+  <div class="company-header">
+      <p>{{company.summary}}</p>
+      <img src="assets/space-company-bg.png" alt="" width="100%">
+  </div>
+      
+  <div style="max-width: 1000px; margin: 0 auto;">
+  
+    <p>{{company.name}} is a private company founded in {{company.founded}} by {{company.founder}}.</p>
+
+    <h1>Some numbers</h1>
+
+    <div class="company-numbers">
+      <div>
+        <i class="fas fa-user fa-3x"></i>
+        <h3>employees</h3>
+        <p>{{company.employees}}</p>
+      </div>
+      <div>
+          <i class="fas fa-space-shuttle fa-3x"></i>
+          <h3>vehicles</h3>
+          <p>{{company.vehicles}}</p>
+      </div>
+      <div>
+          <i class="fas fa-paper-plane fa-3x"></i>
+          <h3>launch sites</h3>
+          <p>{{company.launch_sites}}</p>
+      </div>
+      <div>
+          <i class="fas fa-vial fa-3x"></i>
+          <h3>test sites</h3>
+          <p>{{company.test_sites}}</p>
+      </div>
+    </div>
+
+    <h1>{{company.name}} members</h1>
+    <div class="company-numbers">
+      <div>
+        <i class="fas fa-chess-king fa-3x"></i>
+        <h3>CEO</h3>
+        <p>{{company.ceo}}</p>
+      </div>
+      <div>
+          <i class="fas fa-chess-knight fa-3x"></i>
+          <h3>CTO</h3>
+          <p>{{company.cto}}</p>
+      </div>
+      <div>
+          <i class="fas fa-chess-queen fa-3x"></i>
+          <h3>coo</h3>
+          <p>{{company.coo}}</p>
+      </div>
+      <div>
+          <i class="fas fa-chess-bishop fa-3x"></i>
+          <h3>cto propulsion</h3>
+          <p>{{company.cto_propulsion}}</p>
+      </div>
+    </div>
+  </div>
+</div>
