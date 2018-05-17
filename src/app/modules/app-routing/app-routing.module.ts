@@ -20,7 +20,7 @@ const appRoutes: Routes = [
   { path: 'capsules', component: CapsuleListComponent },
   { path: 'capsules/:id', component: CapsuleDetailsComponent },
   { path: 'launchpads', component: LaunchpadListComponent },
-  { path: 'launchpad/:id', component: LaunchpadDetailsComponent },
+  { path: 'launchpads/:id', component: LaunchpadDetailsComponent },
   { path: 'launches', component: LaunchListComponent },
   { path: 'about', component: CompanyComponent },
   { path: '**', component: NotFoundComponent }
