@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {LaunchFilter} from "../../../models/launch";
 import {SpacexApiService} from "../../../services/spacex-api.service";
 import {Rocket} from "../../../models/rocket";
@@ -12,6 +12,9 @@ export class LaunchFilterComponent implements OnInit {
 
   constructor(private spacexApi: SpacexApiService) { }
 
+  @Output('filterLaunches')
+  filterLaunches = new EventEmitter<LaunchFilter>();
+
   public rockets: Rocket[] = [];
   public filter: LaunchFilter = {};
 
@@ -20,7 +23,12 @@ export class LaunchFilterComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.filter);
+    this.filterLaunches.emit(this.filter);
+  }
+
+  reset() {
+    this.filter = {};
+    this.filterLaunches.emit(this.filter);
   }
 
 }

@@ -12,7 +12,7 @@
   </mat-form-field>
 
   <mat-form-field>
-    <input type="text" matInput name="rocket_name" [matAutocomplete]="auto" [(ngModel)]="filter.rocket_name">
+    <input type="text" matInput placeholder="Rocket" name="rocket_name" [matAutocomplete]="auto" [(ngModel)]="filter.rocket_name">
   </mat-form-field>
 
   <mat-autocomplete #auto="matAutocomplete">
@@ -20,6 +20,8 @@
       {{ rocket.name }}
     </mat-option>
   </mat-autocomplete>
+  <mat-slide-toggle name="launch_success" [(ngModel)]="filter.launch_success">Launch success</mat-slide-toggle>
 
-  <button mat-raised-button color="primary" type="submit">Filter</button>
+  <button mat-raised-button color="primary" type="submit">FILTER</button>
 </form>
+<button mat-raised-button color="accent" (click)="reset()">RESET</button>

@@ -14,6 +14,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatNativeDateModule} from "@angular/material";
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {FormsModule} from "@angular/forms";
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import {FormsModule} from "@angular/forms";
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatSlideToggleModule
   ],
   declarations: []
 })
