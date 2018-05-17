@@ -1,3 +1,11 @@
-<p>
-  capsule-details works!
-</p>
+<div *ngIf="capsule !== null" class="content">
+  <button mat-raised-button color="primary" routerLink="/rockets">Back</button>
+  <h1>
+    {{ capsule.name }}
+    <span
+      class="status"
+      [ngClass]="{'status--active': capsule.active, 'status--inactive': !capsule.active}"
+      matTooltip="{{ capsule.active ? 'Active' : 'Inactive' }}"
+    ></span>
+  </h1>
+</div>

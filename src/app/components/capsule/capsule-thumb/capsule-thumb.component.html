@@ -9,6 +9,8 @@
         matTooltip="{{ capsule.active ? 'Active' : 'Inactive' }}"
       ></span>
     </div>
-
   </mat-card-header>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" routerLink="/capsules/{{capsule.id}}">Details</button>
+  </mat-card-actions>
 </mat-card>
