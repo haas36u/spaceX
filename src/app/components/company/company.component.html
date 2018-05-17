@@ -3,9 +3,9 @@
       <p>{{company.summary}}</p>
       <img src="assets/space-company-bg.png" alt="" width="100%">
   </div>
-      
+
   <div style="max-width: 1000px; margin: 0 auto;">
-  
+
     <p>{{company.name}} is a private company founded in {{company.founded}} by {{company.founder}}.</p>
 
     <h1>Some numbers</h1>
@@ -56,5 +56,9 @@
           <p>{{company.cto_propulsion}}</p>
       </div>
     </div>
+
+    <h1>Find us</h1>
+    <app-gmap [company]="company"></app-gmap>
   </div>
 </div>
+

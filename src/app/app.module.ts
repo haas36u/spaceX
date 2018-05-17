@@ -23,6 +23,7 @@ import { LaunchThumbComponent } from './components/launch/launch-thumb/launch-th
 import { LaunchFilterComponent } from './components/launch/launch-filter/launch-filter.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import {NgHttpLoaderModule} from 'ng-http-loader/ng-http-loader.module';
+import { GmapComponent } from './components/gmap/gmap.component';
 import { CoreThumbComponent } from './components/core/core-thumb/core-thumb.component';
 import { CoreListComponent } from './components/core/core-list/core-list.component';
 import { CoreDetailsComponent } from './components/core/core-details/core-details.component';
@@ -45,6 +46,7 @@ import { CoreDetailsComponent } from './components/core/core-details/core-detail
     LaunchThumbComponent,
     LaunchFilterComponent,
     NotFoundComponent,
+    GmapComponent
     CoreThumbComponent,
     CoreListComponent,
     CoreDetailsComponent
