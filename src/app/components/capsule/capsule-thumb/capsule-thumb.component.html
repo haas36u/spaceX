@@ -1,3 +1,16 @@
-<p>
-  capsule-thumb works!
-</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><span class="text-bold">{{capsule.name}}</span></mat-card-title>
+    <div class="launch-success">
+      Active :
+      <span
+        class="status"
+        [ngClass]="{'status--active': capsule.active, 'status--inactive': !capsule.active}"
+        matTooltip="{{ capsule.active ? 'Active' : 'Inactive' }}"
+      ></span>
+    </div>
+  </mat-card-header>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" routerLink="/capsules/{{capsule.id}}">Details</button>
+  </mat-card-actions>
+</mat-card>

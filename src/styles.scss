@@ -32,14 +32,14 @@ a {
 }
 
 .content {
-    margin: 0 1rem;
+  margin: 1rem;
 }
 
 h1{
-    text-transform: uppercase;
-    border-bottom: 2px solid #CCAC55;
-    font-size: 3rem;
-    font-weight: 400;
+  text-transform: uppercase;
+  border-bottom: 2px solid #CCAC55;
+  font-size: 3rem;
+  font-weight: 400;
 }
 
 .text-bold {
@@ -111,7 +111,7 @@ h1{
     flex-wrap: wrap;
 }
 
-app-launch-thumb, app-rocket-thumb{
+app-launch-thumb, app-rocket-thumb, app-launchpad-thumb, app-capsule-thumb{
     flex: 1 0 25%;
     padding: 24px;
     margin: 1rem;
@@ -143,8 +143,6 @@ mat-card-content {
     background-size: cover;
 }
 
-
-
 /** COMPANY **/
 .company-header{
   position: relative;
@@ -169,4 +167,7 @@ mat-card-content {
   &>div {
     margin: 0 2rem;
   }
+}
+table{
+  text-align: left;
 }
