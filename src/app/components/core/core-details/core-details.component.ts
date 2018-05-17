@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { SpacexApiService } from '../../../services/spacex-api.service';
+import { Core } from '../../../models/core';
 
 @Component({
   selector: 'app-core-details',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoreDetailsComponent implements OnInit {
 
-  constructor() { }
+  public core: Core = null;
+
+  constructor(private route: ActivatedRoute, private spacexApi: SpacexApiService) { }
 
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.spacexApi.getCore(params['id']).subscribe(core => this.core = core);
+    });
   }
-
 }

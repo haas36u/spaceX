@@ -1,3 +1,26 @@
-<p>
-  cores-details works!
-</p>
+<div *ngIf="core !== null" class="content">
+  <button mat-raised-button color="primary" routerLink="/cores">Back</button>
+  <h1>
+    {{ core.core_serial }}
+    <span
+      class="status"
+      [ngClass]="{'status--active': core.status == 'active', 'status--warning': core.status == 'expended', 'status--inactive': core.status == 'retired', 'status--destroyed' : core.status == 'destroyed'}"
+      matTooltip="{{ core.status }}"
+    ></span>
+  </h1>
+
+  <p>{{core.details}}</p>
+
+  <mat-divider></mat-divider>
+
+  <p><span class="text-bold">Rtls attemps : </span>{{core.rtls_attempt}}</p>
+  <p><span class="text-bold">Asds attemps : </span>{{core.asds_attempt}}</p>
+  <p><span class="text-bold">Asds landings : </span>{{core.asds_landings}}</p>
+  <p><span class="text-bold">Water landing : </span>{{core.water_landing}}</p>
+
+  <mat-divider></mat-divider>
+  <p><span class="text-bold">Missions : </span></p>
+  <ul style="padding-left: 1rem; list-style-type: disc;">
+    <li *ngFor="let mission of core.missions">{{mission}}</li>
+  </ul>
+</div>  
