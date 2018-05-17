@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CoresListComponent } from './cores-list.component';
+import { CoreThumbComponent } from './core-thumb.component';
 
-describe('CoresListComponent', () => {
-  let component: CoresListComponent;
-  let fixture: ComponentFixture<CoresListComponent>;
+describe('CoreThumbComponent', () => {
+  let component: CoreThumbComponent;
+  let fixture: ComponentFixture<CoreThumbComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CoresListComponent ]
+      declarations: [ CoreThumbComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CoresListComponent);
+    fixture = TestBed.createComponent(CoreThumbComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
