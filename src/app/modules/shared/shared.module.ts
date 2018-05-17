@@ -15,6 +15,7 @@ import {MatNativeDateModule} from "@angular/material";
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {FormsModule} from "@angular/forms";
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MomentModule } from 'ngx-moment';
 
 @NgModule({
   imports: [
@@ -35,7 +36,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatNativeDateModule,
     FormsModule,
     MatAutocompleteModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MomentModule
   ],
   declarations: []
 })
