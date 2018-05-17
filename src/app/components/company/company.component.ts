@@ -18,4 +18,5 @@ export class CompanyComponent implements OnInit {
         this.company = company;
       }
     );
+  }
 }
