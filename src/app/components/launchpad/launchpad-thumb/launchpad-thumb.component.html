@@ -1,3 +1,24 @@
-<p>
-  launchpad-thumb works!
-</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><span class="text-bold">{{launchpad.full_name}}</span></mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+    <div class="launch-success">
+      Status : 
+        <span
+        class="status"
+        [ngClass]="{'status--active': launchpad.status == 'active', 'status--inactive': launchpad.status == 'retired'}"
+        matTooltip="{{ launchpad.status }}"
+      ></span>
+    </div>
+    
+  </mat-card-header>
+  <mat-card-content>
+    <p><span class="text-bold">Vehicles launched : </span> </p>
+    <ul style="padding-left: 1rem; list-style-type: disc;">
+      <li *ngFor="let vehicle of launchpad.vehicles_launched">{{vehicle}}</li>
+    </ul>
+    <p><span class="text-bold">Location : </span>{{launchpad.location.name}} - {{launchpad.location.region}}</p>
+
+    <p>{{launchpad.details}}</p>
+  </mat-card-content>
+</mat-card>  

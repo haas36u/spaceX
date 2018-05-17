@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SpacexApiService } from '../../../services/spacex-api.service';
+import { Launchpad } from '../../../models/launchpad';
 
 @Component({
   selector: 'app-launchpad-list',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LaunchpadListComponent implements OnInit {
 
-  constructor() { }
+  private launchpads: Launchpad[] = [];
+
+  constructor(private spacexApi: SpacexApiService) { }
 
   ngOnInit() {
+    this.spacexApi.getLaunchpads().subscribe(launchpads => {
+        this.launchpads = launchpads;
+      }
+    );
   }
-
 }
