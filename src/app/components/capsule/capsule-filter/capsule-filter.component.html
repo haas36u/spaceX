@@ -8,7 +8,15 @@
     </mat-select>
   </mat-form-field>
 
+  <mat-form-field>
+    <mat-select placeholder="Status" name="status" [(ngModel)]="filter.status">
+      <mat-option *ngFor="let state of status" [value]="state">
+        {{ state }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-  <button mat-raised-button color="primary" type="button">FILTER</button>
+
+  <button mat-raised-button color="primary" type="submit">FILTER</button>
   <button mat-raised-button color="accent" (click)="reset()">RESET</button>
 </form>

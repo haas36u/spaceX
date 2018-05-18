@@ -17,6 +17,8 @@ import {FormsModule} from "@angular/forms";
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import { MomentModule } from 'ngx-moment';
+import {MatChipsModule} from '@angular/material/chips';
+
 
 @NgModule({
   imports: [
@@ -39,7 +41,8 @@ import { MomentModule } from 'ngx-moment';
     MatAutocompleteModule,
     MatSlideToggleModule,
     MomentModule,
-    MatSelectModule
+    MatSelectModule,
+    MatChipsModule
   ],
   declarations: []
 })

@@ -9,11 +9,12 @@ import {SpacexApiService} from "../../../services/spacex-api.service";
 })
 export class CapsuleFilterComponent implements OnInit {
 
-  @Output('capsuleFilter')
-  capsuleFilter = new EventEmitter<CapsuleFilter>();
+  @Output('filterCapsule')
+  filterCapsule = new EventEmitter<CapsuleFilter>();
 
   public filter: CapsuleFilter = {};
   public types: Capsule[];
+  public status = ['active', 'destroyed', 'unknown', 'retired'];
 
   constructor(private spacexApi: SpacexApiService) { }
 
@@ -22,11 +23,11 @@ export class CapsuleFilterComponent implements OnInit {
   }
 
   onSubmit() {
-    this.capsuleFilter.emit(this.filter);
+    this.filterCapsule.emit(this.filter);
   }
 
   reset() {
     this.filter = {};
-    this.capsuleFilter.emit(this.filter);
+    this.filterCapsule.emit(this.filter);
   }
 }

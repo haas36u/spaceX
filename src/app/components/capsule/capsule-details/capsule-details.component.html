@@ -4,8 +4,8 @@
     {{ capsule.capsule_serial }}
     <span
       class="status"
-      [ngClass]="{'status--active': capsule.status, 'status--inactive': !capsule.status}"
-      matTooltip="{{ capsule.status ? 'Active' : 'Inactive' }}"
+      [ngClass]="{'status--active': capsule.status == 'active', 'status--warning': capsule.status == 'unknown', 'status--inactive': capsule.status == 'retired', 'status--destroyed' : capsule.status == 'destroyed'}"
+      matTooltip="{{ capsule.status }}"
     ></span>
 
   </h1>

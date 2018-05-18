@@ -90,26 +90,26 @@ h1{
 }
 
 /** STATUS **/
-.status {
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
+.mat-chip-list-wrapper {
   float: right;
+}
+.status {
+  color: #ffffff !important;
 
   &--active {
-    background: green;
+    background: green !important;
   }
 
   &--inactive {
-    background: red;
+    background: red !important;
   }
 
   &--warning {
-    background: orange;
+    background: orange !important;
   }
 
   &--destroyed {
-    background: grey;
+    background: grey !important;
   }
 }
 
@@ -121,7 +121,7 @@ h1{
 
 app-launch-thumb, app-rocket-thumb, app-launchpad-thumb, app-capsule-thumb, app-core-thumb{
     flex: 1 0 25%;
-    padding: 24px;
+    padding: 1rem;
     margin: 1rem;
     box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 }
@@ -137,6 +137,10 @@ app-launch-thumb, app-rocket-thumb, app-launchpad-thumb, app-capsule-thumb, app-
 
       .status {
         margin-left: 0.2rem;
+      }
+
+      .mat-chip {
+        text-transform: capitalize;
       }
     }
 }

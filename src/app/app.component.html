@@ -2,12 +2,12 @@
 	<mat-sidenav #sidenav [mode]="push">
 		<img src="assets/logo.png"  routerLink="/" alt="Logo SpaceX">
 		<ul>
-			<li><a routerLink="/rockets">Rockets</a></li>
-			<li><a routerLink="/capsules">Capsules</a></li>
-			<li><a routerLink="/launchpads">Launchpad</a></li>
-			<li><a routerLink="/launches">Launches</a></li>
-			<li><a routerLink="/cores">Cores</a></li>
-			<li><a routerLink="/about">About us</a></li>
+			<li><a (click)="sidenav.toggle()" routerLink="/rockets">Rockets</a></li>
+			<li><a (click)="sidenav.toggle()" routerLink="/capsules">Capsules</a></li>
+			<li><a (click)="sidenav.toggle()" routerLink="/launchpads">Launchpad</a></li>
+			<li><a (click)="sidenav.toggle()" routerLink="/launches">Launches</a></li>
+			<li><a (click)="sidenav.toggle()" routerLink="/cores">Cores</a></li>
+			<li><a (click)="sidenav.toggle()" routerLink="/about">About us</a></li>
 		</ul>
 	</mat-sidenav>
 
