@@ -1,5 +1,5 @@
 <form (ngSubmit)="onSubmit()" #filterForm="ngForm">
-  
+
   <mat-form-field>
     <mat-select placeholder="Status" name="status" [(ngModel)]="filter.status">
       <mat-option *ngFor="let type of types" [value]="type">
@@ -17,5 +17,5 @@
   </mat-form-field>
 
   <button  mat-raised-button color="primary" type="submit">Filter</button>
+  <button mat-raised-button color="accent" (click)="reset()">Reset</button>
 </form>
-<button mat-raised-button color="accent" (click)="reset()">Reset</button>
