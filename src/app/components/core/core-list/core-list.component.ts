@@ -9,7 +9,7 @@ import { SpacexApiService } from '../../../services/spacex-api.service';
 })
 export class CoreListComponent implements OnInit {
 
-  private cores: Core[] = [];
+  public cores: Core[] = [];
 
   constructor(private spacexApiService: SpacexApiService) { }
 

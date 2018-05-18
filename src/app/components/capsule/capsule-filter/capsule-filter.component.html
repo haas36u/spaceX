@@ -1,0 +1,22 @@
+<form (ngSubmit)="onSubmit()" #filterForm="ngForm">
+
+  <mat-form-field>
+    <mat-select placeholder="Type" name="capsule_id" [(ngModel)]="filter.capsule_id">
+      <mat-option *ngFor="let type of types" [value]="type.id">
+        {{ type.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Status" name="status" [(ngModel)]="filter.status">
+      <mat-option *ngFor="let state of status" [value]="state">
+        {{ state }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  <button mat-raised-button color="primary" type="submit">FILTER</button>
+  <button mat-raised-button color="accent" (click)="reset()">RESET</button>
+</form>

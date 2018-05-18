@@ -13,9 +13,20 @@
     </div>
   </div>
 
-  <app-core-filter (filterCore)="loadCores($event)"></app-core-filter>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Filter
+      </mat-panel-title>
+      <mat-panel-description>
+        Filters the cores
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <app-core-filter (filterCore)="loadCores($event)"></app-core-filter>
+  </mat-expansion-panel>
 
   <div class="thumbnail-list">
     <app-core-thumb *ngFor="let core of cores" [core]="core"></app-core-thumb>
   </div>
-</div>  
+</div>

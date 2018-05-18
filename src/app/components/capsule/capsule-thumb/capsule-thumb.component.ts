@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Capsule} from "../../../models/capsule";
+import {Capsule, CapsuleDetails} from "../../../models/capsule";
 
 @Component({
   selector: 'app-capsule-thumb',
@@ -8,7 +8,7 @@ import {Capsule} from "../../../models/capsule";
 })
 export class CapsuleThumbComponent implements OnInit {
 
-  @Input() capsule: Capsule;
+  @Input() capsule: CapsuleDetails;
 
   constructor() { }
 

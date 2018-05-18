@@ -1,6 +1,31 @@
 <div class="content">
   <h1>Our capsules</h1>
 
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Filter
+      </mat-panel-title>
+      <mat-panel-description>
+        Filters the capsules
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <app-capsule-filter (filterCapsule)="loadCapsules($event)"></app-capsule-filter>
+  </mat-expansion-panel>
+
+  <div class="legend">
+    <div class="legend-title">Status Legend</div>
+    <div class="legend-scale">
+      <ul class="legend-labels">
+        <li><span class="status--active"></span>Active</li>
+        <li><span class="status--warning"></span>Unknown</li>
+        <li><span class="status--inactive"></span>Retired</li>
+        <li><span class="status--destroyed"></span>Destroyed</li>
+      </ul>
+    </div>
+  </div>
+
   <div class="thumbnail-list">
     <app-capsule-thumb *ngFor="let capsule of capsules" [capsule]="capsule"></app-capsule-thumb>
   </div>
