@@ -5,18 +5,18 @@
     <mat-card-title><span class="text-bold">{{launch.mission_name}}</span></mat-card-title>
     <mat-card-subtitle>{{launch.launch_date_utc | amDateFormat: 'YYYY-MM-DD HH:mm'}}</mat-card-subtitle>
     <div class="launch-success">
-      Launch success : 
+      Launch success :
         <span
         class="status"
         [ngClass]="{'status--active': launch.launch_success, 'status--inactive': !launch.launch_success}"
         matTooltip="{{ launch.launch_success ? 'Launch Success' : 'Launch Failed' }}"
       ></span>
     </div>
-   
+
   </mat-card-header>
   <mat-card-content>
     <p><span class="text-bold">Launch site : </span> {{launch.launch_site.site_name_long}}</p>
-    <p><span class="text-bold">Rocket name : </span> {{launch.rocket.rocket_name}}</p>
+    <p><span class="text-bold">Rocket name : </span> {{launch.rocket.name}}</p>
     <p>{{launch.details}}</p>
   </mat-card-content>
   <mat-card-actions>

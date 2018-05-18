@@ -6,7 +6,7 @@
       Active :
       <span
         class="status"
-        [ngClass]="{'status--active': capsule.status, 'status--inactive': !capsule.status}"
+        [ngClass]="{'status--active': capsule.status == 'active', 'status--warning': capsule.status == 'unknown', 'status--inactive': capsule.status == 'retired', 'status--destroyed' : capsule.status == 'destroyed'}"
         matTooltip="{{ capsule.status ? 'Active' : 'Inactive' }}"
       ></span>
     </div>

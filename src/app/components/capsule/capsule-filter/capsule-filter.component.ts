@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {CapsuleFilter} from "../../../models/capsule";
+import {Capsule, CapsuleFilter} from "../../../models/capsule";
+import {SpacexApiService} from "../../../services/spacex-api.service";
 
 @Component({
   selector: 'app-capsule-filter',
@@ -12,10 +13,20 @@ export class CapsuleFilterComponent implements OnInit {
   capsuleFilter = new EventEmitter<CapsuleFilter>();
 
   public filter: CapsuleFilter = {};
+  public types: Capsule[];
 
-  constructor() { }
+  constructor(private spacexApi: SpacexApiService) { }
 
   ngOnInit() {
+    this.spacexApi.getCapsules().subscribe(types => this.types = types);
   }
 
+  onSubmit() {
+    this.capsuleFilter.emit(this.filter);
+  }
+
+  reset() {
+    this.filter = {};
+    this.capsuleFilter.emit(this.filter);
+  }
 }

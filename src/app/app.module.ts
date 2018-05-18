@@ -47,7 +47,7 @@ import { CapsuleFilterComponent } from './components/capsule/capsule-filter/caps
     LaunchThumbComponent,
     LaunchFilterComponent,
     NotFoundComponent,
-    GmapComponent
+    GmapComponent,
     CoreThumbComponent,
     CoreListComponent,
     CoreDetailsComponent,
