@@ -2,11 +2,12 @@
   <button mat-raised-button color="primary" routerLink="/cores">Back</button>
   <h1>
     {{ core.core_serial }}
-    <span
-      class="status"
-      [ngClass]="{'status--active': core.status == 'active', 'status--warning': core.status == 'expended', 'status--inactive': core.status == 'retired', 'status--destroyed' : core.status == 'destroyed'}"
-      matTooltip="{{ core.status }}"
-    ></span>
+    <mat-chip-list class="launch-success">
+      <mat-chip class="status"
+                [ngClass]="{'status--active': core.status == 'active', 'status--warning': core.status == 'expended', 'status--inactive': core.status == 'retired', 'status--destroyed' : core.status == 'destroyed'}">
+        {{ core.status }}
+      </mat-chip>
+    </mat-chip-list>
   </h1>
 
   <p>{{core.details}}</p>
