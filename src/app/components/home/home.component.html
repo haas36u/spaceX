@@ -1,11 +1,11 @@
-<div class="homepage-background">
+<div class="homepage-background"  *ngIf="company != null">
     <div>
         <h2>{{company.name}}</h2>
         <p>Private company founded in {{company.founded}} by {{company.founder}}</p>
     </div>
 </div>
 
-<div class="small-content">
+<div class="small-content" *ngIf="launch != null">
     <h1>Last launch</h1>
     <div class="thumbnail-list">
         <app-launch-thumb *ngFor="let launch of launch" [launch]="launch"></app-launch-thumb>
