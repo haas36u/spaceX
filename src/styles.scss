@@ -6,6 +6,11 @@ html, html * {
   font-family: Roboto;
 }
 
+*{
+  margin:0;
+  padding:0;
+}
+
 body {
   font-size: 1em;
   padding: 0;
@@ -35,6 +40,11 @@ a {
   margin: 1rem;
 }
 
+.small-content {
+  max-width: 1000px;
+  margin: 1rem auto;
+}
+
 h1{
   text-transform: uppercase;
   border-bottom: 2px solid #CCAC55;
@@ -45,48 +55,8 @@ h1{
 .text-bold {
   font-weight: bold;
 }
-
-/** HEADER **/
-.mat-toolbar {
-  background-color: #181c1f;
-}
-
-.menu-icon {
-    cursor: pointer;
-    color: #ffffff;
-    padding: 0.5rem;
-}
-
-.mat-sidenav {
-  text-transform: uppercase;
-  padding: 1rem;
-  background-color: #454552;
-  color: #ffffff;
-
-  img:hover {
-    cursor: pointer;
-  }
-  ul {
-    margin-top: 2rem;
-
-    li {
-      margin: 1.5rem 0;
-    }
-  }
-
-  a {
-    border-bottom: 2px solid transparent;
-    transition: 0.5s border-bottom;
-    color: #ffffff;
-    font-size: 1rem;
-  }
-  a:hover {
-    border-bottom-color: #CCAC55;
-  }
-}
-
-.example-spacer {
-  flex: 1 1 auto;
+.text-right {
+  text-align: right;
 }
 
 /** STATUS **/
@@ -149,32 +119,6 @@ mat-card-content {
 }
 .mat-card--header-image {
     background-size: cover;
-}
-
-/** COMPANY **/
-.company-header{
-  position: relative;
-  text-align: center;
-  color: white;
-
-  p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    font-weight: 300;
-  }
-}
-
-.company-numbers {
-  text-align: center;
-  text-transform: uppercase;
-  display: flex;
-
-  &>div {
-    margin: 0 2rem;
-  }
 }
 
 /** LEGEND **/
