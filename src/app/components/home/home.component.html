@@ -10,4 +10,8 @@
     <div class="thumbnail-list">
         <app-launch-thumb *ngFor="let launch of launch" [launch]="launch"></app-launch-thumb>
     </div>
+
+    <div class="text-right">
+        <button mat-raised-button color="primary" routerLink="/launches">See more launches</button>
+    </div>
 </div>

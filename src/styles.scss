@@ -11,10 +11,6 @@ html, html * {
   padding:0;
 }
 
-body, html {
-  height: 100%;
-}
-
 body {
   font-size: 1em;
   padding: 0;
@@ -46,7 +42,7 @@ a {
 
 .small-content {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 
 h1{
@@ -58,6 +54,9 @@ h1{
 
 .text-bold {
   font-weight: bold;
+}
+.text-right {
+  text-align: right;
 }
 
 /** STATUS **/
