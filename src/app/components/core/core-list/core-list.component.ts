@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Core } from '../../../models/core';
+import { Core, CoreFilter } from '../../../models/core';
 import { SpacexApiService } from '../../../services/spacex-api.service';
 
 @Component({
@@ -14,7 +14,11 @@ export class CoreListComponent implements OnInit {
   constructor(private spacexApiService: SpacexApiService) { }
 
   ngOnInit() {
-    this.spacexApiService.getCores().subscribe(cores => {
+    this.loadCores();
+  }
+
+  loadCores(filter: CoreFilter = null): void{
+    this.spacexApiService.getCores(filter).subscribe(cores => {
         this.cores = cores;
       }
     );

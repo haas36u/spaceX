@@ -176,9 +176,6 @@ mat-card-content {
     margin: 0 2rem;
   }
 }
-table{
-  text-align: left;
-}
 
 /** LEGEND **/
 .legend {
@@ -205,4 +202,16 @@ ul.legend-labels li span {
   display: block;
   height: 15px;
   width: 60px;
+}
+
+/**GLOBAL CSS**/
+table{
+  text-align: left;
+}
+
+.mat-form-field, .mat-slide-toggle {
+  margin: 0 1rem;
+}
+.mat-option-text, .mat-select-value-text {
+  text-transform: capitalize;
 }

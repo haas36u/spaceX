@@ -28,6 +28,7 @@ import { CoreThumbComponent } from './components/core/core-thumb/core-thumb.comp
 import { CoreListComponent } from './components/core/core-list/core-list.component';
 import { CoreDetailsComponent } from './components/core/core-details/core-details.component';
 import { CapsuleFilterComponent } from './components/capsule/capsule-filter/capsule-filter.component';
+import { CoreFilterComponent } from './components/core/core-filter/core-filter.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { CapsuleFilterComponent } from './components/capsule/capsule-filter/caps
     CoreThumbComponent,
     CoreListComponent,
     CoreDetailsComponent,
-    CapsuleFilterComponent
+    CapsuleFilterComponent,
+    CoreFilterComponent
   ],
   imports: [
     BrowserModule,
