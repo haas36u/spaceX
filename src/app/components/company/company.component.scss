@@ -3,7 +3,14 @@
     position: relative;
     text-align: center;
     color: white;
-  
+    background-image: url('../../../assets/space-company-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 1rem;
+
     p {
       position: absolute;
       top: 50%;
@@ -15,9 +22,11 @@
   }
   
   .company-numbers {
+    margin: 1rem 0;
     text-align: center;
     text-transform: uppercase; 
     display: flex;
+    flex-wrap: wrap;
   
     &>div {
       margin: 0 2rem;
