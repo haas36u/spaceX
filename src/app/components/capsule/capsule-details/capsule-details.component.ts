@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {SpacexApiService} from "../../../services/spacex-api.service";
-import {Capsule} from "../../../models/capsule";
+import {Capsule, CapsuleDetails} from "../../../models/capsule";
 
 @Component({
   selector: 'app-capsule-details',
@@ -10,13 +10,17 @@ import {Capsule} from "../../../models/capsule";
 })
 export class CapsuleDetailsComponent implements OnInit {
 
-  public capsule: Capsule;
+  public capsule: CapsuleDetails;
+  public caps: Capsule;
 
   constructor(private route: ActivatedRoute, private spacexApi: SpacexApiService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.spacexApi.getCapsule(params['id']).subscribe(capsule => this.capsule = capsule);
+      this.spacexApi.getCapsuleDetails(params['id']).subscribe(capsule => {
+        this.capsule = capsule;
+        this.spacexApi.getCapsule(capsule.capsule_id).subscribe(caps => this.caps = caps);
+      });
     });
   }
 

@@ -1,16 +1,19 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title><span class="text-bold">{{capsule.name}}</span></mat-card-title>
+    <mat-card-title><span class="text-bold">{{capsule.capsule_serial}}</span></mat-card-title>
+    <mat-card-subtitle>Original launch : {{capsule.original_launch | amDateFormat: 'YYYY-MM-DD'}}</mat-card-subtitle>
     <div class="launch-success">
       Active :
       <span
         class="status"
-        [ngClass]="{'status--active': capsule.active, 'status--inactive': !capsule.active}"
-        matTooltip="{{ capsule.active ? 'Active' : 'Inactive' }}"
+        [ngClass]="{'status--active': capsule.status, 'status--inactive': !capsule.status}"
+        matTooltip="{{ capsule.status ? 'Active' : 'Inactive' }}"
       ></span>
     </div>
   </mat-card-header>
+  <mat-card-content>
+  </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button color="primary" routerLink="/capsules/{{capsule.id}}">Details</button>
+    <button mat-raised-button color="primary" routerLink="/capsules/{{capsule.capsule_serial}}">Details</button>
   </mat-card-actions>
 </mat-card>

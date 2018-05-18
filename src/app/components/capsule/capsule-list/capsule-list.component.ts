@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SpacexApiService} from "../../../services/spacex-api.service";
-import {Capsule} from "../../../models/capsule";
+import {Capsule, CapsuleDetails} from "../../../models/capsule";
 
 @Component({
   selector: 'app-capsule-list',
@@ -9,12 +9,12 @@ import {Capsule} from "../../../models/capsule";
 })
 export class CapsuleListComponent implements OnInit {
 
-  public capsules: Capsule[];
+  public capsules: CapsuleDetails[];
 
   constructor(private spacexApi: SpacexApiService) { }
 
   ngOnInit() {
-    this.spacexApi.getCapsules()
+    this.spacexApi.getCapsulesDetails()
       .subscribe(capsules => this.capsules = capsules);
   }
 

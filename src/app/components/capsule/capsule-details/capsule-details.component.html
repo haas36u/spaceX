@@ -1,13 +1,19 @@
 <div *ngIf="capsule !== null" class="content">
   <button mat-raised-button color="primary" routerLink="/capsules">Back</button>
   <h1>
-    {{ capsule.name }}
+    {{ capsule.capsule_serial }}
     <span
       class="status"
-      [ngClass]="{'status--active': capsule.active, 'status--inactive': !capsule.active}"
-      matTooltip="{{ capsule.active ? 'Active' : 'Inactive' }}"
+      [ngClass]="{'status--active': capsule.status, 'status--inactive': !capsule.status}"
+      matTooltip="{{ capsule.status ? 'Active' : 'Inactive' }}"
     ></span>
+
   </h1>
+
+  <p>Type : {{capsule.type}}</p>
+  <p>Original launch : {{capsule.original_launch | amDateFormat: 'YYYY-MM-DD'}}</p>
+  <p>Landings : {{capsule.landings}}</p>
+  <p>Details : {{capsule.details}}</p>
 
   <mat-divider></mat-divider>
 
@@ -20,19 +26,19 @@
     <table>
       <tr>
         <th>Material</th>
-        <td>{{capsule.heat_shield.material}}</td>
+        <td>{{caps.heat_shield.material}}</td>
       </tr>
       <tr>
         <th>Size meters</th>
-        <td>{{capsule.heat_shield.size_meters}}</td>
+        <td>{{caps.heat_shield.size_meters}}</td>
       </tr>
       <tr>
         <th>Temps degrees</th>
-        <td>{{capsule.heat_shield.temp_degrees}}</td>
+        <td>{{caps.heat_shield.temp_degrees}}</td>
       </tr>
       <tr>
         <th>Dev partner</th>
-        <td>{{capsule.heat_shield.dev_partner}}</td>
+        <td>{{caps.heat_shield.dev_partner}}</td>
       </tr>
     </table>
   </mat-expansion-panel>
@@ -46,23 +52,22 @@
     <table>
       <tr>
         <th>Launch Mass</th>
-        <td>{{capsule.launch_payload_mass.kg}}</td>
+        <td>{{caps.launch_payload_mass.kg}}</td>
       </tr>
       <tr>
         <th>Launch cubic meter</th>
-        <td>{{capsule.launch_payload_vol.cubic_meters}}</td>
+        <td>{{caps.launch_payload_vol.cubic_meters}}</td>
       </tr>
       <tr>
         <th>Return Mass</th>
-        <td>{{capsule.return_payload_mass.kg}}</td>
+        <td>{{caps.return_payload_mass.kg}}</td>
       </tr>
       <tr>
         <th>Return cubic meter</th>
-        <td>{{capsule.return_payload_vol.cubic_meters}}</td>
+        <td>{{caps.return_payload_vol.cubic_meters}}</td>
       </tr>
     </table>
   </mat-expansion-panel>
-
 
   <mat-expansion-panel>
     <mat-expansion-panel-header>
@@ -70,7 +75,7 @@
         Thrusters
       </mat-panel-title>
     </mat-expansion-panel-header>
-    <table *ngFor="let thruster of capsule.thrusters">
+    <table *ngFor="let thruster of caps.thrusters">
       <tr>
         <th>Type</th>
         <td>{{thruster.type}}</td>

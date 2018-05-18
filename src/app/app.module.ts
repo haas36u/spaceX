@@ -27,6 +27,7 @@ import { GmapComponent } from './components/gmap/gmap.component';
 import { CoreThumbComponent } from './components/core/core-thumb/core-thumb.component';
 import { CoreListComponent } from './components/core/core-list/core-list.component';
 import { CoreDetailsComponent } from './components/core/core-details/core-details.component';
+import { CapsuleFilterComponent } from './components/capsule/capsule-filter/capsule-filter.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { CoreDetailsComponent } from './components/core/core-details/core-detail
     GmapComponent
     CoreThumbComponent,
     CoreListComponent,
-    CoreDetailsComponent
+    CoreDetailsComponent,
+    CapsuleFilterComponent
   ],
   imports: [
     BrowserModule,
