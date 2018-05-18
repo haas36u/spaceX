@@ -45,11 +45,18 @@ a {
   margin: 1rem auto;
 }
 
+@media screen and (max-width: 1000px) {
+  .small-content {
+    margin: 1rem;
+  }
+}
+
 h1{
   text-transform: uppercase;
   border-bottom: 2px solid #CCAC55;
   font-size: 3rem;
   font-weight: 400;
+  margin: 2rem 0;
 }
 
 .text-bold {
