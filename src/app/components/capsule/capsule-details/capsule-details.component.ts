@@ -10,8 +10,8 @@ import {Capsule, CapsuleDetails} from "../../../models/capsule";
 })
 export class CapsuleDetailsComponent implements OnInit {
 
-  public capsule: CapsuleDetails;
-  public caps: Capsule;
+  public capsule: CapsuleDetails = null;
+  public caps: Capsule = null;
 
   constructor(private route: ActivatedRoute, private spacexApi: SpacexApiService) { }
 
